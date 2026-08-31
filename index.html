@@ -4,103 +4,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanisshq M | Python Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <title>Tanisshq M | Data Analyst & AI Engineer</title>
+    <meta name="description" content="Portfolio of Tanisshq M - Data Analyst, AI Engineer & Python Developer specializing in SQL, Power BI, GenAI, LangGraph Agents, and Data Engineering.">
+    <meta name="keywords" content="Tanisshq M, Data Analyst, AI Engineer, Python Developer, SQL, Power BI, LangGraph, Generative AI, Portfolio">
+    <meta name="author" content="Tanisshq M">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- 3D Background Elements -->
-    <div class="bg-cube"></div>
-    <div class="bg-pyramid"></div>
-    <div class="bg-sphere"></div>
+    <!-- Ambient Background Glows -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="bg-grid-pattern"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Creative <span class="accent"> Space</span></a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#certificates" class="nav-link">Certificates</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="resume.pdf" class="nav-link" target="_blank">Resume</a></li>
+    <!-- Navigation Header -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+        <nav class="navbar container">
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fas fa-terminal"></i></span>
+                <span class="logo-text">TANISSHQ <span class="gradient-text">M</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-house"></i> <span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#domains" class="nav-link"><i class="fas fa-cubes"></i> <span>Domains</span></a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-code-branch"></i> <span>Projects</span></a></li>
+                <li><a href="#certificates" class="nav-link"><i class="fas fa-certificate"></i> <span>Certificates</span></a></li>
+                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> <span>Experience</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> <span>Contact</span></a></li>
+                <li class="nav-btn-item">
+                    <a href="resume.pdf" target="_blank" class="btn btn-outline-glow btn-sm">
+                        <i class="fas fa-file-pdf"></i> Resume
+                    </a>
+                </li>
             </ul>
-            <button class="menu-toggle">
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-        </div>
-    </nav>
+
+            <div class="nav-actions">
+                <a href="resume.pdf" target="_blank" class="btn btn-gradient btn-sm nav-desktop-cta">
+                    <i class="fas fa-download"></i> <span>Resume</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="floating-text">
-                        <h1 class="hero-title">
-                            <span class="text-3d">TANISSHQ </span>
-                            <span class="accent text-3d"> M</span>
-                            <span class="text-3d"></span>
-                        </h1>
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Available for Data Analyst & AI Engineer roles</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Transforming Data into <br>
+                    <span class="gradient-text">Intelligent AI Solutions</span>
+                </h1>
+
+                <div class="typewriter-container">
+                    <span class="typewriter-prefix">I am a </span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Final-year Electrical & Electronics Engineering student blending <strong>SQL, Power BI & Python Analytics</strong> with <strong>Enterprise Generative AI, LangGraph Agents & LLM Architectures</strong> to build data-driven systems that deliver real business impact.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#projects" class="btn btn-gradient">
+                        <i class="fas fa-rocket"></i>
+                        <span>Explore Projects</span>
+                    </a>
+                    <a href="#certificates" class="btn btn-glass">
+                        <i class="fas fa-award"></i>
+                        <span>View Credentials</span>
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="btn btn-outline-glow">
+                        <i class="fas fa-file-arrow-down"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <span class="socials-label">Connect:</span>
+                    <a href="https://github.com/tanisshq7" target="_blank" class="social-chip" aria-label="GitHub">
+                        <i class="fab fa-github"></i> <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/tanisshq-m-2ba090301" target="_blank" class="social-chip" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+                    </a>
+                    <a href="https://leetcode.com/u/9YyVpE65gs" target="_blank" class="social-chip" aria-label="LeetCode">
+                        <i class="fas fa-code"></i> <span>LeetCode</span>
+                    </a>
+                    <a href="mailto:mtanisshq7@gmail.com" class="social-chip" aria-label="Email">
+                        <i class="fas fa-envelope"></i> <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-card-wrapper">
+                    <div class="profile-card-glow"></div>
+                    <div class="profile-card">
+                        <div class="profile-image-container">
+                            <img src="profile.jpg" alt="Tanisshq M - Data Analyst & AI Engineer" class="profile-img">
+                            <div class="profile-badge-overlay">
+                                <i class="fas fa-check-circle"></i> Verified Profile
+                            </div>
+                        </div>
+
+                        <div class="profile-card-details">
+                            <h3 class="profile-name">Tanisshq M</h3>
+                            <p class="profile-role">Data Analyst &bull; AI Engineer</p>
+                            <div class="profile-tags">
+                                <span class="pill-tag"><i class="fas fa-database"></i> SQL & Power BI</span>
+                                <span class="pill-tag"><i class="fas fa-brain"></i> GenAI & RAG</span>
+                                <span class="pill-tag"><i class="fab fa-python"></i> Python & FastAPI</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="typewriter">
-                        <h2 class="hero-subtitle">Python & Full-Stack Developer</h2>
+
+                    <!-- Floating Interactive Badges -->
+                    <div class="floating-badge badge-1">
+                        <div class="badge-icon"><i class="fas fa-robot"></i></div>
+                        <div class="badge-text">
+                            <span class="badge-title">Agentic AI & RAG</span>
+                            <span class="badge-sub">LangGraph & Gemini</span>
+                        </div>
                     </div>
-                    <p class="hero-description">Building elegant solutions through code. Transforming ideas into
-                        scalable applications with precision and creativity.</p>
-                    <div class="hero-buttons">
-                        <a href="#certificates" class="btn btn-primary btn-3d">
-                            <span class="btn-text">View Certificates</span>
-                            <span class="btn-shadow"></span>
-                        </a>
-                        <a href="#projects" class="btn btn-secondary btn-3d">
-                            <span class="btn-text">Explore Projects</span>
-                            <span class="btn-shadow"></span>
-                        </a>
-                        <a href="resume.pdf" class="btn btn-secondary btn-3d" target="_blank">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-shadow"></span>
-                        </a>
+
+                    <div class="floating-badge badge-2">
+                        <div class="badge-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="badge-text">
+                            <span class="badge-title">Data Analytics</span>
+                            <span class="badge-sub">DAX & Power Query</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-3">
+                        <div class="badge-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="badge-text">
+                            <span class="badge-title">Databricks & AWS</span>
+                            <span class="badge-sub">19+ Accreditations</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="floating-card">
-                        <div class="card-content">
-                            <div class="profile-3d">
-                                <div class="cube">
-                                    <div class="face front">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <div class="face back">
-                                        <i class="fas fa-python"></i>
-                                    </div>
-                                    <div class="face right">
-                                        <i class="fas fa-database"></i>
-                                    </div>
-                                    <div class="face left">
-                                        <i class="fas fa-server"></i>
-                                    </div>
-                                    <div class="face top">
-                                        <i class="fas fa-cloud"></i>
-                                    </div>
-                                    <div class="face bottom">
-                                        <i class="fas fa-mobile-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="profile-tag">Developer Profile</p>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Bar -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">19+</h3>
+                        <p class="stat-label">Certificates & Accreditations</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-fork"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">3+</h3>
+                        <p class="stat-label">Core Enterprise AI Projects</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">8.20</h3>
+                        <p class="stat-label">B.E. CGPA (3rd Year EEE)</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">1</h3>
+                        <p class="stat-label">Patent Filed (Smart Inflator)</p>
                     </div>
                 </div>
             </div>
@@ -108,434 +211,410 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-decor">/</span>
-                About <span class="accent">Me</span>
-                <span class="title-decor">\</span>
-            </h2>
-            <div class="about-content">
-                <div class="about-card floating-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="about-text">
-                                <p class="about-bio">A dedicated Python and Full-Stack Developer with a passion for
-                                    creating clean, efficient, and scalable software solutions. My philosophy centers on
-                                    continuous learning through practical implementation—building, debugging, and
-                                    refining.</p>
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-user-astronaut"></i> Biography</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">A Passionate Technologist at the Intersection of Data, Intelligence & Scalability</p>
+            </div>
 
-                                <div class="education">
-                                    <h3><i class="fas fa-graduation-cap accent-icon"></i> Academic Journey</h3>
-                                    <p>Pursuing B.E. in Electrical & Electronics Engineering (3rd Year)<br>
-                                        <em>Sri Shakthi Institute of Engineering & Technology, Coimbatore</em>
-                                    </p>
-                                </div>
+            <div class="about-grid">
+                <div class="about-bio-card glass-card">
+                    <div class="bio-header">
+                        <div class="bio-avatar">
+                            <img src="profile.jpg" alt="Tanisshq M">
+                        </div>
+                        <div>
+                            <h3 class="bio-name">Tanisshq M</h3>
+                            <p class="bio-title">Data Analyst &bull; AI Engineer &bull; Full-Stack Builder</p>
+                        </div>
+                    </div>
 
-                                <div class="soft-skills" style="margin-top: 25px;">
-                                    <h3><i class="fas fa-users accent-icon"></i> Soft Skills</h3>
-                                    <div class="skill-tags">
-                                        <span class="skill-tag">Communication</span>
-                                        <span class="skill-tag">Team Leadership</span>
-                                        <span class="skill-tag">Adaptability</span>
-                                        <span class="skill-tag">Time Management</span>
-                                    </div>
-                                </div>
+                    <p class="bio-paragraph">
+                        I am a final-year Electrical and Electronics Engineering student at <strong>Sri Shakthi Institute of Engineering and Technology, Coimbatore</strong> (CGPA: 8.20). My journey combines a solid engineering foundation with deep practical expertise in querying, analyzing, and transforming messy datasets into clear strategic insights, alongside engineering autonomous AI agent systems.
+                    </p>
+
+                    <p class="bio-paragraph">
+                        From designing interactive <strong>Power BI dashboards</strong> and optimizing complex <strong>SQL queries</strong> to developing full-stack <strong>Generative AI copilots</strong> using LangGraph and Google Gemini, I thrive on building production-ready digital solutions that automate workflows and solve real business problems.
+                    </p>
+
+                    <div class="about-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-icon"><i class="fas fa-university"></i></span>
+                            <div>
+                                <span class="meta-label">College</span>
+                                <span class="meta-val">Sri Shakthi Inst. of Engg. & Tech.</span>
                             </div>
                         </div>
-                        <div class="card-back">
-                            <div class="skills">
-                                <h3><i class="fas fa-code accent-icon"></i> Technical Expertise</h3>
-                                <div class="skills-graph-3d">
-                                    <div class="bar-container">
-                                        <div class="bar-3d" style="--height: 90%; --color: #e34c26;">
-                                            <div class="face top"></div>
-                                            <div class="face front"></div>
-                                            <div class="face right"></div>
-                                            <div class="face left"></div>
-                                            <div class="face back"></div>
-                                            <div class="face bottom"></div>
-                                        </div>
-                                        <span class="label">HTML</span>
-                                    </div>
-                                    <div class="bar-container">
-                                        <div class="bar-3d" style="--height: 85%; --color: #264de4;">
-                                            <div class="face top"></div>
-                                            <div class="face front"></div>
-                                            <div class="face right"></div>
-                                            <div class="face left"></div>
-                                            <div class="face back"></div>
-                                            <div class="face bottom"></div>
-                                        </div>
-                                        <span class="label">CSS</span>
-                                    </div>
-                                    <div class="bar-container">
-                                        <div class="bar-3d" style="--height: 80%; --color: #f0db4f;">
-                                            <div class="face top"></div>
-                                            <div class="face front"></div>
-                                            <div class="face right"></div>
-                                            <div class="face left"></div>
-                                            <div class="face back"></div>
-                                            <div class="face bottom"></div>
-                                        </div>
-                                        <span class="label">JS</span>
-                                    </div>
-                                    <div class="bar-container">
-                                        <div class="bar-3d" style="--height: 95%; --color: #306998;">
-                                            <div class="face top"></div>
-                                            <div class="face front"></div>
-                                            <div class="face right"></div>
-                                            <div class="face left"></div>
-                                            <div class="face back"></div>
-                                            <div class="face bottom"></div>
-                                        </div>
-                                        <span class="label">Python</span>
-                                    </div>
-                                    <div class="bar-container">
-                                        <div class="bar-3d" style="--height: 75%; --color: #f29111;">
-                                            <div class="face top"></div>
-                                            <div class="face front"></div>
-                                            <div class="face right"></div>
-                                            <div class="face left"></div>
-                                            <div class="face back"></div>
-                                            <div class="face bottom"></div>
-                                        </div>
-                                        <span class="label">SQL</span>
-                                    </div>
-                                </div>
 
-                                <div class="career-goals" style="margin-bottom: 30px;">
-                                    <h3><i class="fas fa-star accent-icon"></i> Career Objective</h3>
-                                    <p style="padding-left: 34px; color: var(--text-secondary); line-height: 1.6;">My
-                                        goal is to become a full-stack developer and work on real-world scalable
-                                        applications.</p>
-                                </div>
+                        <div class="meta-item">
+                            <span class="meta-icon"><i class="fas fa-graduation-cap"></i></span>
+                            <div>
+                                <span class="meta-label">Degree</span>
+                                <span class="meta-val">B.E. Electrical & Electronics (2023 - 2027)</span>
+                            </div>
+                        </div>
 
-                                <div class="learning-journey">
-                                    <h3><i class="fas fa-book-reader accent-icon"></i> Learning Journey</h3>
-                                    <div class="learning-items"
-                                        style="padding-left: 34px; display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                                        <div class="learning-item" style="color: var(--text-secondary);">
-                                            <i class="fas fa-check-circle"
-                                                style="color: var(--accent-color); margin-right: 10px;"></i> CCBP
-                                            Academy – NxtWave
-                                        </div>
-                                        <div class="learning-item" style="color: var(--text-secondary);">
-                                            <i class="fas fa-check-circle"
-                                                style="color: var(--accent-color); margin-right: 10px;"></i> DSA in
-                                            Python
-                                        </div>
-                                        <div class="learning-item" style="color: var(--text-secondary);">
-                                            <i class="fas fa-check-circle"
-                                                style="color: var(--accent-color); margin-right: 10px;"></i> Full-Stack
-                                            Development
-                                        </div>
-                                        <div class="learning-item" style="color: var(--text-secondary);">
-                                            <i class="fas fa-check-circle"
-                                                style="color: var(--accent-color); margin-right: 10px;"></i> GenAI
-                                            projects
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="meta-item">
+                            <span class="meta-icon"><i class="fas fa-location-dot"></i></span>
+                            <div>
+                                <span class="meta-label">Location</span>
+                                <span class="meta-val">Tamil Nadu, India</span>
+                            </div>
+                        </div>
+
+                        <div class="meta-item">
+                            <span class="meta-icon"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <span class="meta-label">Direct Email</span>
+                                <a href="mailto:mtanisshq7@gmail.com" class="meta-val link">mtanisshq7@gmail.com</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="about-highlights-wrapper">
+                    <div class="highlight-box glass-card">
+                        <div class="highlight-icon gradient-icon-1"><i class="fas fa-chart-line"></i></div>
+                        <div class="highlight-text">
+                            <h4>Data-Driven Decisions</h4>
+                            <p>Specialized in Power BI, DAX modeling, Power Query transformations, and advanced SQL data extraction to uncover trends and drive high-impact metrics.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box glass-card">
+                        <div class="highlight-icon gradient-icon-2"><i class="fas fa-microchip"></i></div>
+                        <div class="highlight-text">
+                            <h4>Agentic AI & GenAI Systems</h4>
+                            <p>Hands-on proficiency with Google Gemini API, LangGraph multi-agent workflows, AST SQL sandboxing, RAG pipelines, and Model Context Protocol (MCP).</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box glass-card">
+                        <div class="highlight-icon gradient-icon-3"><i class="fas fa-layer-group"></i></div>
+                        <div class="highlight-text">
+                            <h4>Full-Stack & Data Pipelines</h4>
+                            <p>Capable of building end-to-end web applications with Python FastAPI, React, SQLite/MySQL, automated web scraping pipelines (WebHarvest-X), and cloud ETL.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="certificates-section">
+    <!-- Technical Domains & Skills -->
+    <section id="domains" class="domains-section">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-decor">/</span>
-                Professional <span class="accent">Credentials</span>
-                <span class="title-decor">\</span>
-            </h2>
-            <p class="section-subtitle">Certificates & Achievements</p>
-
-            <!-- Category Navigation -->
-            <div class="category-nav">
-                <button class="category-btn active" data-category="all">
-                    <span class="btn-icon"><i class="fas fa-layer-group"></i></span>
-                    <span>All</span>
-                </button>
-                <button class="category-btn" data-category="technical">
-                    <span class="btn-icon"><i class="fas fa-code"></i></span>
-                    <span>Technical</span>
-                </button>
-                <button class="category-btn" data-category="workshop">
-                    <span class="btn-icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                    <span>Workshops</span>
-                </button>
-                <button class="category-btn" data-category="conference">
-                    <span class="btn-icon"><i class="fas fa-microphone"></i></span>
-                    <span>Conferences</span>
-                </button>
-                <button class="category-btn" data-category="achievement">
-                    <span class="btn-icon"><i class="fas fa-award"></i></span>
-                    <span>Achievements</span>
-                </button>
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-cubes"></i> Skill Matrices</span>
+                <h2 class="section-title">Core <span class="gradient-text">Domains & Expertise</span></h2>
+                <p class="section-subtitle">Comprehensive toolkit across data analytics, artificial intelligence, and software engineering</p>
             </div>
 
-            <!-- Technical Skills -->
-            <div class="category-section active" id="technical-section">
-                <h3 class="category-title">
-                    <i class="fas fa-code"></i>
-                    Technical Proficiency
-                </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card floating-card" data-category="technical">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-static-website.png" target="_blank" class="cert-link">
-                                    <img src="cert-static-website.png" alt="Static Website Certificate" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>Build Your Own Static Website</h4>
-                                <p class="certificate-org">NxtWave</p>
-                                <p class="certificate-date">April 2025</p>
-                                <div class="certificate-tags">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>Web Development</span>
-                                </div>
-                            </div>
+            <div class="domains-grid">
+                <!-- Domain 1: Data Analytics & BI -->
+                <div class="domain-card glass-card">
+                    <div class="domain-header">
+                        <div class="domain-icon-badge color-blue">
+                            <i class="fas fa-chart-column"></i>
+                        </div>
+                        <div>
+                            <span class="domain-category">Core Domain</span>
+                            <h3 class="domain-title">Data Analytics & BI</h3>
+                        </div>
+                    </div>
+                    <p class="domain-desc">
+                        Extracting actionable intelligence through structured querying, data cleaning, statistical analysis, and executive dashboard design.
+                    </p>
+                    <div class="skill-chips-group">
+                        <span class="skill-chip"><i class="fas fa-database"></i> SQL (MySQL, PostgreSQL)</span>
+                        <span class="skill-chip"><i class="fas fa-chart-pie"></i> Power BI</span>
+                        <span class="skill-chip"><i class="fas fa-calculator"></i> DAX Measures</span>
+                        <span class="skill-chip"><i class="fas fa-filter"></i> Power Query</span>
+                        <span class="skill-chip"><i class="fas fa-table"></i> Microsoft Excel</span>
+                        <span class="skill-chip"><i class="fas fa-broom"></i> Data Cleaning & Validation</span>
+                        <span class="skill-chip"><i class="fas fa-magnifying-glass-chart"></i> Exploratory Data Analysis</span>
+                        <span class="skill-chip"><i class="fas fa-bolt"></i> Query Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Domain 2: AI & Generative AI -->
+                <div class="domain-card glass-card">
+                    <div class="domain-header">
+                        <div class="domain-icon-badge color-purple">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <span class="domain-category">Core Domain</span>
+                            <h3 class="domain-title">AI & Generative AI</h3>
+                        </div>
+                    </div>
+                    <p class="domain-desc">
+                        Engineering autonomous agentic workflows, LLM orchestration, Retrieval-Augmented Generation (RAG), and security sandboxing.
+                    </p>
+                    <div class="skill-chips-group">
+                        <span class="skill-chip"><i class="fas fa-wand-magic-sparkles"></i> Google Gemini API</span>
+                        <span class="skill-chip"><i class="fas fa-diagram-project"></i> LangGraph Agents</span>
+                        <span class="skill-chip"><i class="fas fa-book-bookmark"></i> RAG Architectures</span>
+                        <span class="skill-chip"><i class="fas fa-shield-halved"></i> AST SQL Sandboxing</span>
+                        <span class="skill-chip"><i class="fas fa-comments"></i> Prompt Engineering</span>
+                        <span class="skill-chip"><i class="fas fa-network-wired"></i> Model Context Protocol (MCP)</span>
+                        <span class="skill-chip"><i class="fas fa-server"></i> Databricks AI Fundamentals</span>
+                    </div>
+                </div>
+
+                <!-- Domain 3: Programming & Full-Stack -->
+                <div class="domain-card glass-card">
+                    <div class="domain-header">
+                        <div class="domain-icon-badge color-cyan">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <span class="domain-category">Engineering</span>
+                            <h3 class="domain-title">Software & Web Stack</h3>
+                        </div>
+                    </div>
+                    <p class="domain-desc">
+                        Building clean, responsive, and performant web interfaces backed by scalable Python APIs and robust architecture.
+                    </p>
+                    <div class="skill-chips-group">
+                        <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-chip"><i class="fas fa-bolt-lightning"></i> FastAPI</span>
+                        <span class="skill-chip"><i class="fab fa-react"></i> React & Vite</span>
+                        <span class="skill-chip"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+                        <span class="skill-chip"><i class="fab fa-html5"></i> HTML5 & CSS3</span>
+                        <span class="skill-chip"><i class="fas fa-arrows-split-up-and-left"></i> RESTful APIs</span>
+                        <span class="skill-chip"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Domain 4: Data Engineering & Cloud -->
+                <div class="domain-card glass-card">
+                    <div class="domain-header">
+                        <div class="domain-icon-badge color-emerald">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div>
+                            <span class="domain-category">Data Architecture</span>
+                            <h3 class="domain-title">Data Engineering & Cloud</h3>
+                        </div>
+                    </div>
+                    <p class="domain-desc">
+                        Building reliable data pipelines, automated web scrapers with data quality monitors, and cloud data architecture.
+                    </p>
+                    <div class="skill-chips-group">
+                        <span class="skill-chip"><i class="fab fa-aws"></i> AWS Data Engineering</span>
+                        <span class="skill-chip"><i class="fas fa-spider"></i> Web Scraping (BeautifulSoup)</span>
+                        <span class="skill-chip"><i class="fas fa-check-double"></i> Pydantic Data Validation</span>
+                        <span class="skill-chip"><i class="fas fa-database"></i> SQLite & MongoDB</span>
+                        <span class="skill-chip"><i class="fas fa-file-csv"></i> Parquet & CSV Pipelines</span>
+                        <span class="skill-chip"><i class="fas fa-desktop"></i> Streamlit Dashboards</span>
+                        <span class="skill-chip"><i class="fas fa-chart-simple"></i> Data Quality Scoring (0-100)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-laptop-code"></i> Portfolio Work</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Enterprise Projects</span></h2>
+                <p class="section-subtitle">Real-world full-stack AI, data analytics, and data engineering systems</p>
+            </div>
+
+            <div class="projects-list">
+                <!-- Project 1: Enterprise AI Copilot -->
+                <div class="project-featured-card glass-card">
+                    <div class="project-content-side">
+                        <div class="project-meta-pill">
+                            <span class="pill-dot"></span>
+                            <span>Agentic AI &bull; Enterprise RAG</span>
+                        </div>
+                        <h3 class="project-title">Enterprise AI Copilot</h3>
+                        <p class="project-tagline">Autonomous Assistant for Corporate Knowledge Bases & Workflow Automation</p>
+                        
+                        <p class="project-description">
+                            A production-ready full-stack AI application designed to empower enterprise teams to securely search, query, and automate workflows across internal PDF documents using <strong>Retrieval-Augmented Generation (RAG)</strong>, <strong>LangGraph multi-step agents</strong>, <strong>Google Gemini</strong>, and <strong>Model Context Protocol (MCP)</strong> integrations.
+                        </p>
+
+                        <div class="project-features-list">
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Multi-step LangGraph agentic reasoning for complex corporate queries</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> High-accuracy vector retrieval using ChromaDB and semantic document chunking</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Secure FastAPI backend with JWT bearer token authentication and rate limiting</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Modern interactive React + Vite UI with streaming real-time responses</div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-badge"><i class="fas fa-diagram-project"></i> LangGraph</span>
+                            <span class="tech-badge"><i class="fas fa-sparkles"></i> Google Gemini</span>
+                            <span class="tech-badge"><i class="fas fa-bolt"></i> FastAPI</span>
+                            <span class="tech-badge"><i class="fab fa-react"></i> React + Vite</span>
+                            <span class="tech-badge"><i class="fas fa-database"></i> ChromaDB</span>
+                            <span class="tech-badge"><i class="fas fa-network-wired"></i> MCP Protocol</span>
+                        </div>
+
+                        <div class="project-links-row">
+                            <a href="https://github.com/tanisshq7/Enterprise-AI-Copilot" target="_blank" class="btn btn-gradient btn-sm">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
                         </div>
                     </div>
 
-                    <div class="certificate-card floating-card" data-category="technical">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-database.png" target="_blank" class="cert-link">
-                                    <img src="cert-database.png" alt="Database Certificate" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>Introduction to Databases</h4>
-                                <p class="certificate-org">NxtWave</p>
-                                <p class="certificate-date">April 2025</p>
-                                <div class="certificate-tags">
-                                    <span>SQL</span>
-                                    <span>Database</span>
-                                    <span>Data Management</span>
+                    <div class="project-visual-side">
+                        <div class="project-mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
                                 </div>
+                                <span class="mockup-title">enterprise-ai-copilot // v1.0</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card floating-card" data-category="technical">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-aws.png" target="_blank" class="cert-link">
-                                    <img src="cert-aws.png" alt="AWS Certificate" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>Data Engineering on AWS</h4>
-                                <p class="certificate-org">AWS</p>
-                                <p class="certificate-date">November 2025</p>
-                                <div class="certificate-tags">
-                                    <span>AWS</span>
-                                    <span>Cloud</span>
-                                    <span>Data Engineering</span>
+                            <div class="mockup-body">
+                                <div class="code-preview">
+                                    <span class="code-comment"># LangGraph Multi-Agent Knowledge Workflow</span>
+                                    <span class="code-line"><span class="code-kw">from</span> langgraph.graph <span class="code-kw">import</span> StateGraph</span>
+                                    <span class="code-line"><span class="code-kw">from</span> services.rag <span class="code-kw">import</span> vector_retriever</span>
+                                    <span class="code-line"><span class="code-kw">from</span> core.gemini <span class="code-kw">import</span> gemini_agent</span>
+                                    <br>
+                                    <span class="code-line"><span class="code-fn">@app.post</span>(<span class="code-str">"/api/v1/copilot/query"</span>)</span>
+                                    <span class="code-line"><span class="code-kw">async def</span> <span class="code-fn">handle_enterprise_query</span>(query: QueryRequest):</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;context = <span class="code-kw">await</span> vector_retriever.search(query.text)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;agent_res = <span class="code-kw">await</span> gemini_agent.run(context, query.history)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> {<span class="code-str">"answer"</span>: agent_res.answer, <span class="code-str">"citations"</span>: context.sources}</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card floating-card" data-category="technical">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-ai.png" target="_blank" class="cert-link">
-                                    <img src="cert-ai.png" alt="AI Certificate" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>Artificial Intelligence for All</h4>
-                                <p class="certificate-org">Infosys</p>
-                                <p class="certificate-date">July 2025</p>
-                                <div class="certificate-tags">
-                                    <span>AI</span>
-                                    <span>Machine Learning</span>
-                                    <span>Infosys</span>
+                                <div class="project-card-stat-pill">
+                                    <i class="fas fa-shield-alt text-emerald"></i> Production Architecture &bull; JWT Protected
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Workshops -->
-            <div class="category-section" id="workshop-section">
-                <h3 class="category-title">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    Workshop Participation
-                </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card floating-card" data-category="workshop">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-mcp.png" target="_blank" class="cert-link">
-                                    <img src="cert-mcp.png" alt="MCP Workshop" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>MCP Mega Workshop</h4>
-                                <p class="certificate-org">NxtWave</p>
-                                <p class="certificate-date">August 2025</p>
-                                <div class="certificate-tags">
-                                    <span>AI</span>
-                                    <span>MCP</span>
-                                    <span>Workshop</span>
-                                </div>
-                            </div>
+                <!-- Project 2: AI-Powered SQL Query Generator -->
+                <div class="project-featured-card glass-card">
+                    <div class="project-content-side">
+                        <div class="project-meta-pill">
+                            <span class="pill-dot"></span>
+                            <span>Natural Language &bull; Database Sandboxing</span>
+                        </div>
+                        <h3 class="project-title">AI-Powered SQL Query Generator</h3>
+                        <p class="project-tagline">Ask in Plain English &bull; Get Verified SQL, Optimization & Live Visualizations</p>
+                        
+                        <p class="project-description">
+                            An enterprise-grade, production-quality web application that translates natural language questions into optimized, dialect-correct SQL queries using the <strong>Google Gemini API</strong>. Features automated database schema detection, strict read-only AST execution sandboxing, actionable query tuning suggestions, dynamic chart rendering, and multi-format export.
+                        </p>
+
+                        <div class="project-features-list">
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Automatic database schema detection & contextual dialect translation</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> AST-based validation: blocks destructive statements (DROP/DELETE/UPDATE)</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Query Performance Optimizer with index recommendations and anti-pattern alerts</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Automated chart visualization with Recharts and multi-format export (CSV, JSON, PDF)</div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-badge"><i class="fas fa-bolt"></i> FastAPI</span>
+                            <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+                            <span class="tech-badge"><i class="fas fa-sparkles"></i> Gemini API</span>
+                            <span class="tech-badge"><i class="fas fa-database"></i> SQLAlchemy</span>
+                            <span class="tech-badge"><i class="fas fa-chart-simple"></i> Recharts</span>
+                            <span class="tech-badge"><i class="fas fa-shield"></i> SQL AST Validation</span>
+                        </div>
+
+                        <div class="project-links-row">
+                            <a href="https://github.com/tanisshq7/Ai-sql-query-generator" target="_blank" class="btn btn-gradient btn-sm">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
                         </div>
                     </div>
 
-                    <div class="certificate-card floating-card" data-category="workshop">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-data-analytics.png" target="_blank" class="cert-link">
-                                    <img src="cert-data-analytics.png" alt="Data Analytics Workshop" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>Data Analytics Workshop</h4>
-                                <p class="certificate-org">Top Engineers</p>
-                                <p class="certificate-date">August 2025</p>
-                                <div class="certificate-tags">
-                                    <span>Data Analytics</span>
-                                    <span>Workshop</span>
+                    <div class="project-visual-side">
+                        <div class="project-mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
                                 </div>
+                                <span class="mockup-title">nl2sql-engine // v2.4</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card floating-card" data-category="workshop">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-uiux.png" target="_blank" class="cert-link">
-                                    <img src="cert-uiux.png" alt="UI/UX Workshop" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>UI/UX Mega Workshop</h4>
-                                <p class="certificate-org">NxtWave</p>
-                                <p class="certificate-date">February 2025</p>
-                                <div class="certificate-tags">
-                                    <span>UI/UX</span>
-                                    <span>Figma</span>
-                                    <span>Design</span>
+                            <div class="mockup-body">
+                                <div class="code-preview">
+                                    <span class="code-comment">-- Natural Language Prompt: "Top 5 products by monthly revenue in 2025"</span>
+                                    <span class="code-line"><span class="code-kw">SELECT</span> p.product_name, <span class="code-fn">SUM</span>(s.quantity * s.unit_price) <span class="code-kw">AS</span> total_revenue</span>
+                                    <span class="code-line"><span class="code-kw">FROM</span> sales s <span class="code-kw">JOIN</span> products p <span class="code-kw">ON</span> s.product_id = p.id</span>
+                                    <span class="code-line"><span class="code-kw">WHERE</span> <span class="code-fn">strftime</span>(<span class="code-str">'%Y'</span>, s.sale_date) = <span class="code-str">'2025'</span></span>
+                                    <span class="code-line"><span class="code-kw">GROUP BY</span> p.product_name</span>
+                                    <span class="code-line"><span class="code-kw">ORDER BY</span> total_revenue <span class="code-kw">DESC LIMIT</span> 5;</span>
+                                </div>
+                                <div class="project-card-stat-pill">
+                                    <i class="fas fa-check-double text-cyan"></i> AST Sandboxed &bull; Anti-Pattern Analysis Passed
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Conferences -->
-            <div class="category-section" id="conference-section">
-                <h3 class="category-title">
-                    <i class="fas fa-microphone"></i>
-                    Conference Contributions
-                </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card floating-card" data-category="conference">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-ieee.png" target="_blank" class="cert-link">
-                                    <img src="cert-ieee.png" alt="IEEE Conference" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>IEEE Returning Mothers Conference 2024</h4>
-                                <p class="certificate-org">IEEE</p>
-                                <p class="certificate-date">November 2024</p>
-                                <div class="certificate-tags">
-                                    <span>Conference</span>
-                                    <span>IEEE</span>
-                                    <span>Research</span>
-                                </div>
-                            </div>
+                <!-- Project 3: WebHarvest-X -->
+                <div class="project-featured-card glass-card">
+                    <div class="project-content-side">
+                        <div class="project-meta-pill">
+                            <span class="pill-dot"></span>
+                            <span>Data Engineering &bull; Web Scraping</span>
+                        </div>
+                        <h3 class="project-title">WebHarvest-X</h3>
+                        <p class="project-tagline">Enterprise-Grade Config-Driven Scraping Pipeline & Data Quality Engine</p>
+                        
+                        <p class="project-description">
+                            A real-world, production-ready web scraping and data engineering pipeline designed with resilience in mind. Features YAML config-driven targets, User-Agent header rotation, schema drift monitoring, Pydantic type validation, composite 0–100 data quality scoring, versioned Parquet/CSV exports, and an executive Streamlit management dashboard.
+                        </p>
+
+                        <div class="project-features-list">
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Config-driven YAML architecture supporting multiple dynamic scraping targets</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Strict Pydantic model validation and automated schema drift alerts</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Composite 0-100 data quality scoring assessing completeness and consistency</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Streamlit management dashboard with real-time pipeline monitoring & export</div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-badge"><i class="fas fa-spider"></i> BeautifulSoup4</span>
+                            <span class="tech-badge"><i class="fas fa-check-to-slot"></i> Pydantic</span>
+                            <span class="tech-badge"><i class="fas fa-desktop"></i> Streamlit</span>
+                            <span class="tech-badge"><i class="fas fa-database"></i> SQLite</span>
+                            <span class="tech-badge"><i class="fas fa-file-zipper"></i> Parquet / CSV</span>
+                        </div>
+
+                        <div class="project-links-row">
+                            <a href="https://github.com/tanisshq7/CodeAlpha_WebScraping" target="_blank" class="btn btn-gradient btn-sm">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
                         </div>
                     </div>
 
-                    <div class="certificate-card floating-card" data-category="conference">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-iot.png" target="_blank" class="cert-link">
-                                    <img src="cert-iot.png" alt="IoT Conference" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>IoT Gas Leakage Detection System</h4>
-                                <p class="certificate-org">Suguna College Conference</p>
-                                <p class="certificate-date">April 2024</p>
-                                <div class="certificate-tags">
-                                    <span>IoT</span>
-                                    <span>Research</span>
-                                    <span>Conference</span>
+                    <div class="project-visual-side">
+                        <div class="project-mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
                                 </div>
+                                <span class="mockup-title">webharvest-pipeline // v3.1</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Achievements -->
-            <div class="category-section" id="achievement-section">
-                <h3 class="category-title">
-                    <i class="fas fa-award"></i>
-                    Personal Achievements
-                </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card floating-card" data-category="achievement">
-                        <div class="card-content">
-                            <div class="certificate-preview">
-                                <a href="cert-xpm.png" target="_blank" class="cert-link">
-                                    <img src="cert-xpm.png" alt="XPM Certificate" loading="lazy">
-                                    <div class="link-overlay">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="certificate-info">
-                                <h4>XPM 4.0 Fundamentals</h4>
-                                <p class="certificate-org">NxtWave</p>
-                                <p class="certificate-date">December 2025</p>
-                                <div class="certificate-tags">
-                                    <span>Personal Development</span>
-                                    <span>Mindset</span>
-                                    <span>Achievement</span>
+                            <div class="mockup-body">
+                                <div class="code-preview">
+                                    <span class="code-comment"># Schema Drift & Data Quality Validation Engine</span>
+                                    <span class="code-line"><span class="code-kw">class</span> <span class="code-fn">ProductRecord</span>(BaseModel):</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;title: StrictStr = Field(..., min_length=3)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;price: StrictFloat = Field(..., gt=0.0)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;availability: StrictBool</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;rating: StrictInt = Field(..., ge=1, le=5)</span>
+                                    <br>
+                                    <span class="code-line">quality_score = pipeline.evaluate_quality(records)</span>
+                                    <span class="code-line">print(f<span class="code-str">"Data Quality Score: {quality_score}/100"</span>)</span>
+                                </div>
+                                <div class="project-card-stat-pill">
+                                    <i class="fas fa-chart-line text-emerald"></i> Quality Score: 98.6/100 &bull; 0 Schema Drift
                                 </div>
                             </div>
                         </div>
@@ -545,105 +624,510 @@
         </div>
     </section>
 
-    <!-- Certificate Modal -->
-    <div id="certificateModal" class="modal">
-        <div class="modal-container floating-card">
-            <span class="close-modal">&times;</span>
-            <div class="modal-content">
-                <div class="modal-image-container">
-                    <img id="modalImage" src="" alt="Certificate" class="modal-image">
-                </div>
-                <div class="modal-info">
-                    <h3 id="modalTitle"></h3>
-                    <div class="modal-details">
-                        <p id="modalOrg"></p>
-                        <p id="modalDate"></p>
+    <!-- Professional Credentials & Certificates Section -->
+    <section id="certificates" class="certificates-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-stamp"></i> Accreditations</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Certifications</span></h2>
+                <p class="section-subtitle">Official credentials and accredited coursework across Data, AI, Cloud, and Engineering</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="cert-filter-container">
+                <button class="cert-filter-btn active" data-filter="all">
+                    <i class="fas fa-layer-group"></i> All (19)
+                </button>
+                <button class="cert-filter-btn" data-filter="data-sql">
+                    <i class="fas fa-database"></i> Data & SQL
+                </button>
+                <button class="cert-filter-btn" data-filter="ai-databricks">
+                    <i class="fas fa-brain"></i> AI & Databricks
+                </button>
+                <button class="cert-filter-btn" data-filter="workshops">
+                    <i class="fas fa-chalkboard-user"></i> Workshops
+                </button>
+                <button class="cert-filter-btn" data-filter="internships-conf">
+                    <i class="fas fa-award"></i> Internships & Research
+                </button>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="certificates-grid" id="certGrid">
+
+                <!-- 1. HackerRank SQL Basic -->
+                <div class="cert-card glass-card" data-category="data-sql">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-sql-hackerrank.png', 'SQL (Basic) Certification', 'HackerRank', 'February 25, 2026', 'ID: 51AE3DCE0EDF', 'SQL, Database, HackerRank')">
+                        <img src="cert-sql-hackerrank.png" alt="HackerRank SQL Basic Certificate" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-sql">SQL</span>
                     </div>
-                    <div id="modalTags" class="modal-tags"></div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">SQL (Basic) Certificate</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> HackerRank</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2026</span>
+                            <span class="cert-id-tag">ID: 51AE3DCE0EDF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. CodeChef SQL Practice Queries -->
+                <div class="cert-card glass-card" data-category="data-sql">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-sql-codechef.png', 'SQL Practice Queries', 'CodeChef', 'February 25, 2026', 'ID: b976784', 'SQL, Queries, Problem Solving')">
+                        <img src="cert-sql-codechef.png" alt="CodeChef SQL Practice Queries" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-sql">SQL</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">SQL Practice Queries</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> CodeChef</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2026</span>
+                            <span class="cert-id-tag">ID: b976784</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Databricks Generative AI Fundamentals -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-databricks-genai.png', 'Databricks Accredited Generative AI Fundamentals', 'Databricks Academy', 'May 31, 2026', 'Accredited Badge', 'Generative AI, Databricks, LLMs')">
+                        <img src="cert-databricks-genai.png" alt="Databricks Generative AI Fundamentals" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">Databricks AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Generative AI Fundamentals</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Databricks Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2026</span>
+                            <span class="cert-id-tag">Accredited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Databricks AI Security Fundamentals -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-databricks-ai-security.png', 'Databricks Accredited AI Security Fundamentals', 'Databricks Academy', 'May 31, 2026', 'Accredited Badge', 'AI Security, Governance, Databricks')">
+                        <img src="cert-databricks-ai-security.png" alt="Databricks AI Security Fundamentals" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">Databricks AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">AI Security Fundamentals</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Databricks Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2026</span>
+                            <span class="cert-id-tag">Accredited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Databricks AI Agent Fundamentals -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-databricks-ai-agent.png', 'Databricks Accredited AI Agent Fundamentals', 'Databricks Academy', 'May 31, 2026', 'Accredited Badge', 'AI Agents, Multi-Agent Systems, Databricks')">
+                        <img src="cert-databricks-ai-agent.png" alt="Databricks AI Agent Fundamentals" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">Databricks AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">AI Agent Fundamentals</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Databricks Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2026</span>
+                            <span class="cert-id-tag">Accredited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Databricks Prompt Engineering Fundamentals -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-databricks-prompt-eng.png', 'Databricks Accredited Prompt Engineering Fundamentals', 'Databricks Academy', 'May 31, 2026', 'Accredited Badge', 'Prompt Engineering, LLMs, Databricks')">
+                        <img src="cert-databricks-prompt-eng.png" alt="Databricks Prompt Engineering Fundamentals" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">Databricks AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Prompt Engineering Fundamentals</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Databricks Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2026</span>
+                            <span class="cert-id-tag">Accredited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Databricks Tech Readiness & Data Intelligence -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-databricks-tech-readiness.png', 'Advantages of Tech Readiness & Data Intelligence', 'Databricks Academy', 'June 2, 2026', 'Leadership Accreditation', 'Data Intelligence, Databricks, Leadership')">
+                        <img src="cert-databricks-tech-readiness.png" alt="Databricks Data Intelligence" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">Databricks AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Tech Readiness & Data Intelligence</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Databricks Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jun 2026</span>
+                            <span class="cert-id-tag">Accredited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. AWS Data Engineering -->
+                <div class="cert-card glass-card" data-category="data-sql">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-aws.png', 'Data Engineering on AWS', 'Amazon Web Services (AWS)', 'November 2025', 'AWS Certification', 'AWS, Cloud, Data Engineering')">
+                        <img src="cert-aws.png" alt="Data Engineering on AWS" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-cloud">AWS</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Data Engineering on AWS</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> AWS Training & Certification</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2025</span>
+                            <span class="cert-id-tag">Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Infosys AI for All -->
+                <div class="cert-card glass-card" data-category="ai-databricks">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-ai.png', 'Artificial Intelligence for All', 'Infosys Springboard', 'July 2025', 'Infosys Certified', 'AI, Machine Learning, Infosys')">
+                        <img src="cert-ai.png" alt="Artificial Intelligence for All" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-ai">AI</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Artificial Intelligence for All</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Infosys Springboard</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jul 2025</span>
+                            <span class="cert-id-tag">Infosys</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Introduction to Databases - NxtWave -->
+                <div class="cert-card glass-card" data-category="data-sql">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-database.png', 'Introduction to Databases', 'NxtWave CCBP Academy', 'April 2025', 'CCBP Certification', 'SQL, Relational Databases, Modeling')">
+                        <img src="cert-database.png" alt="Introduction to Databases" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-sql">Databases</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Introduction to Databases</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> NxtWave CCBP Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                            <span class="cert-id-tag">SQL & Relational</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Data Analytics Workshop -->
+                <div class="cert-card glass-card" data-category="workshops">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-data-analytics.png', 'Data Analytics Workshop', 'Top Engineers', 'August 2025', 'Workshop Certificate', 'Data Analytics, Visualization, Hands-on')">
+                        <img src="cert-data-analytics.png" alt="Data Analytics Workshop" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-workshop">Workshop</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Data Analytics Workshop</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Top Engineers</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 2025</span>
+                            <span class="cert-id-tag">Hands-on</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. MCP Mega Workshop -->
+                <div class="cert-card glass-card" data-category="workshops">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-mcp.png', 'MCP Mega Workshop', 'NxtWave', 'August 2025', 'Workshop Certificate', 'AI, Model Context Protocol, Workshop')">
+                        <img src="cert-mcp.png" alt="MCP Mega Workshop" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-workshop">Workshop</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">MCP Mega Workshop</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> NxtWave</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 2025</span>
+                            <span class="cert-id-tag">AI Protocol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. UI/UX Mega Workshop -->
+                <div class="cert-card glass-card" data-category="workshops">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-uiux.png', 'UI/UX Mega Workshop', 'NxtWave', 'February 2025', 'Design Workshop', 'UI/UX, Figma, Product Design')">
+                        <img src="cert-uiux.png" alt="UI/UX Mega Workshop" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-workshop">Design</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">UI/UX Mega Workshop</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> NxtWave</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                            <span class="cert-id-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Build Static Website -->
+                <div class="cert-card glass-card" data-category="workshops">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-static-website.png', 'Build Your Own Static Website', 'NxtWave', 'April 2025', 'Web Dev Certificate', 'HTML, CSS, Web Development')">
+                        <img src="cert-static-website.png" alt="Build Your Own Static Website" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-workshop">Web</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Build Your Own Static Website</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> NxtWave</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                            <span class="cert-id-tag">HTML & CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. XPM 4.0 Fundamentals -->
+                <div class="cert-card glass-card" data-category="workshops">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-xpm.png', 'XPM 4.0 Fundamentals', 'NxtWave', 'December 2025', 'Mindset & Execution', 'Growth Mindset, Execution')">
+                        <img src="cert-xpm.png" alt="XPM 4.0 Fundamentals" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-workshop">Professional</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">XPM 4.0 Fundamentals</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> NxtWave</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 2025</span>
+                            <span class="cert-id-tag">Mindset</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. CodeAlpha Data Analytics Internship -->
+                <div class="cert-card glass-card" data-category="internships-conf">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-internship-codealpha.png', 'Data Analytics Virtual Internship', 'CodeAlpha', 'Aug 2026', 'Internship Offer Letter', 'Data Analytics, Python, Industry Experience')">
+                        <img src="cert-internship-codealpha.png" alt="CodeAlpha Data Analytics Internship" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-intern">Internship</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Data Analytics Intern</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> CodeAlpha</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 2026</span>
+                            <span class="cert-id-tag">Data Role</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Cognifyz Web Dev Internship -->
+                <div class="cert-card glass-card" data-category="internships-conf">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-internship-cognifyz.png', 'Web Development Internship', 'Cognifyz Technologies', 'Jan 2026', 'Internship Offer Letter', 'Web Development, Full Stack')">
+                        <img src="cert-internship-cognifyz.png" alt="Cognifyz Web Dev Internship" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-intern">Internship</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Web Development Intern</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Cognifyz Technologies</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 2026</span>
+                            <span class="cert-id-tag">Web Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. Ideathon & Poster Presentation -->
+                <div class="cert-card glass-card" data-category="internships-conf">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-ideathon.png', 'Ideathon & Poster Presentation (E-Week 25)', 'G.R. Damodaran Academy of Management', 'February 19, 2025', 'Award of Participation', 'Ideathon, Innovation, Presentation')">
+                        <img src="cert-ideathon.png" alt="Ideathon Certificate" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-conf">Competition</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">Ideathon & Poster Presentation</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> G.R. Damodaran Academy</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                            <span class="cert-id-tag">E-Week '25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19. IEEE Conference -->
+                <div class="cert-card glass-card" data-category="internships-conf">
+                    <div class="cert-image-wrap" onclick="openCertModal('cert-ieee.png', 'IEEE Returning Mothers Conference 2024', 'IEEE', 'November 2024', 'Conference Participation', 'IEEE, Research, Technology')">
+                        <img src="cert-ieee.png" alt="IEEE Conference" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Inspect Certificate</span>
+                        </div>
+                        <span class="cert-category-badge badge-conf">Conference</span>
+                    </div>
+                    <div class="cert-info">
+                        <h4 class="cert-title">IEEE Conference 2024</h4>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> IEEE</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2024</span>
+                            <span class="cert-id-tag">Bengaluru</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal for Certificate Viewer -->
+    <div id="certModal" class="cert-modal-backdrop" onclick="closeCertModal(event)">
+        <div class="cert-modal-dialog glass-card" onclick="event.stopPropagation()">
+            <button class="cert-modal-close" onclick="closeCertModalDirect()">&times;</button>
+            <div class="cert-modal-body">
+                <div class="cert-modal-img-container">
+                    <img id="modalCertImg" src="" alt="Certificate Large Preview">
+                </div>
+                <div class="cert-modal-meta">
+                    <h3 id="modalCertTitle"></h3>
+                    <p class="modal-cert-org"><i class="fas fa-building"></i> <span id="modalCertOrg"></span></p>
+                    <div class="modal-cert-info-row">
+                        <span id="modalCertDate"><i class="fas fa-calendar-alt"></i> </span>
+                        <span id="modalCertId" class="cert-id-tag"></span>
+                    </div>
+                    <div class="modal-cert-tags" id="modalCertTags"></div>
+                    <div class="modal-cert-actions">
+                        <a id="modalCertFullLink" href="" target="_blank" class="btn btn-gradient btn-sm">
+                            <i class="fas fa-up-right-from-square"></i> Open Full Image
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Experience & Milestones Section -->
+    <section id="experience" class="experience-section">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-decor">/</span>
-                Featured <span class="accent">Projects</span>
-                <span class="title-decor">\</span>
-            </h2>
-            <p class="section-subtitle">Showcasing practical implementations</p>
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-road"></i> Career Journey</span>
+                <h2 class="section-title">Experience & <span class="gradient-text">Milestones</span></h2>
+                <p class="section-subtitle">Internships, research publications, patent filings, and academic achievements</p>
+            </div>
 
-            <div class="projects-grid">
-                <div class="project-card floating-card">
-                    <div class="card-3d">
-                        <div class="project-image">
-                            <div class="image-container">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Event Webpage</h3>
-                            <p>A clean, semantic HTML-only webpage demonstrating content organization and structure.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                            </div>
-                            <a href="https://tanisshq18.neocities.org/event/event" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Live Preview</span>
-                            </a>
-                        </div>
+            <div class="timeline-wrapper">
+                <!-- Timeline 1: CodeAlpha -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-chart-pie"></i></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-badge">Upcoming / Current</div>
+                        <h3 class="timeline-title">Data Analytics Intern</h3>
+                        <p class="timeline-org">CodeAlpha</p>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> September 2026 (Selection Confirmed)</p>
+                        <p class="timeline-desc">
+                            Selected for virtual Data Analytics Internship focusing on practical business analytics tasks, data manipulation, insight generation, and reporting.
+                        </p>
                     </div>
                 </div>
 
-                <div class="project-card floating-card">
-                    <div class="card-3d">
-                        <div class="project-image">
-                            <div class="image-container">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>EduSphere Pro</h3>
-                            <p>Next-Gen Student Management Platform for efficient student and department administration.
-                            </p>
-                            <div class="project-tech">
-                                <span>Management</span>
-                                <span>Web App</span>
-                                <span>Education</span>
-                            </div>
-                            <a href="https://edu-sphere-pro.netlify.app/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Live Preview</span>
-                            </a>
-                        </div>
+                <!-- Timeline 2: Patent Filed -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-lightbulb"></i></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-badge badge-patent">Patent Filed</div>
+                        <h3 class="timeline-title">Smart Tyre Inflator with Pressure-Adaptive Nitrogen Control</h3>
+                        <p class="timeline-org">Intellectual Property India</p>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> 2024 - 2025</p>
+                        <p class="timeline-desc">
+                            Engineered an innovative automation system for dynamic, pressure-adaptive nitrogen tyre inflation to enhance vehicle safety and energy efficiency.
+                        </p>
                     </div>
                 </div>
 
-                <div class="project-card floating-card">
-                    <div class="card-3d">
-                        <div class="project-image">
-                            <div class="image-container">
-                                <i class="fas fa-road"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Tamil Nadu Road Safety Awareness Portal (TN-RSAP)</h3>
-                            <p>A bilingual Tamil Nadu road safety portal promoting traffic awareness, emergency
-                                response, and responsible driving.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Bilingual</span>
-                            </div>
-                            <a href="https://tanisshq7.github.io/tn-road-safety-portal/" target="_blank"
-                                class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Live Preview</span>
-                            </a>
-                        </div>
+                <!-- Timeline 3: Cognifyz Technologies -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-badge">Completed</div>
+                        <h3 class="timeline-title">Web Development Intern</h3>
+                        <p class="timeline-org">Cognifyz Technologies</p>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> January 2026</p>
+                        <p class="timeline-desc">
+                            Worked on front-end interfaces, responsive web modules, and integrating dynamic JavaScript functionality across production web pages.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 4: IEEE Conference -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-microphone"></i></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-badge badge-conf">Research & Conference</div>
+                        <h3 class="timeline-title">Conference Presentations & IoT Paper</h3>
+                        <p class="timeline-org">IEEE Bengaluru & Suguna College</p>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> 2024</p>
+                        <p class="timeline-desc">
+                            Presented research on <em>IoT Based Gas Leakage Detection Technology</em> at Suguna College Conference and participated in the IEEE Returning Mothers Conference, Bengaluru.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -651,116 +1135,125 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-decor">/</span>
-                Get In <span class="accent">Touch</span>
-                <span class="title-decor">\</span>
-            </h2>
-            <p class="section-subtitle">Let's connect and create something amazing</p>
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+                <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+                <p class="section-subtitle">Interested in data analytics, AI systems, or full-stack opportunities? Reach out!</p>
+            </div>
 
-            <div class="contact-content">
-                <div class="contact-info floating-card">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
+            <div class="contact-grid">
+                <div class="contact-cards-side">
+                    <div class="contact-item-card glass-card">
+                        <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info-content">
+                            <h4>Email Address</h4>
                             <a href="mailto:mtanisshq7@gmail.com">mtanisshq7@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/tanisshq-m-2ba090301"
-                                target="_blank">tanisshq-m-2ba090301</a>
+                    <div class="contact-item-card glass-card">
+                        <div class="contact-icon-box"><i class="fab fa-linkedin"></i></div>
+                        <div class="contact-info-content">
+                            <h4>LinkedIn Profile</h4>
+                            <a href="https://linkedin.com/in/tanisshq-m-2ba090301" target="_blank">tanisshq-m-2ba090301</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
+                    <div class="contact-item-card glass-card">
+                        <div class="contact-icon-box"><i class="fab fa-github"></i></div>
+                        <div class="contact-info-content">
+                            <h4>GitHub Repositories</h4>
                             <a href="https://github.com/tanisshq7" target="_blank">github.com/tanisshq7</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LeetCode</h3>
-                            <a href="https://leetcode.com/u/9YyVpE65gs/" target="_blank">leetcode.com/u/9YyVpE65gs</a>
+                    <div class="contact-item-card glass-card">
+                        <div class="contact-icon-box"><i class="fas fa-code"></i></div>
+                        <div class="contact-info-content">
+                            <h4>LeetCode Profile</h4>
+                            <a href="https://leetcode.com/u/9YyVpE65gs" target="_blank">leetcode.com/u/9YyVpE65gs</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form floating-card">
-                    <h3>Send a Message</h3>
-                    <form action="https://formspree.io/f/mvzoynov" method="POST" id="contactForm">
+                <div class="contact-form-side glass-card">
+                    <h3 class="form-title">Send a Direct Message</h3>
+                    <p class="form-sub">Feel free to drop a message regarding job openings, consulting, or project collaborations.</p>
+                    
+                    <form action="https://formspree.io/f/mvzoynov" method="POST" id="portfolioContactForm">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <label for="formName">Your Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="formName" name="name" placeholder="John Doe" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label for="formEmail">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="formEmail" name="email" placeholder="john@example.com" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="formMessage">Your Message</label>
+                            <div class="input-with-icon textarea-icon">
+                                <i class="fas fa-comment-dots"></i>
+                                <textarea id="formMessage" name="message" rows="5" placeholder="Hi Tanisshq, I saw your portfolio and would like to discuss..." required></textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-3d">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-shadow"></span>
+
+                        <button type="submit" class="btn btn-gradient btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
                         </button>
                     </form>
-                    <div id="formMessage"></div>
+                    <div id="contactFormStatus" class="form-status-msg"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#" class="logo">TANISSHQ <span class="accent"> M</span></a>
-                    <p>Creating digital experiences with precision</p>
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon"><i class="fas fa-terminal"></i></span>
+                        <span class="logo-text">TANISSHQ <span class="gradient-text">M</span></span>
+                    </a>
+                    <p class="footer-tagline">Data Analyst &bull; AI Engineer &bull; Python Developer</p>
+                    <p class="footer-copy-text">Building resilient data models and autonomous AI systems that convert raw data into strategic intelligence.</p>
                 </div>
 
-                <div class="footer-links">
-                    <h4>Navigation</h4>
+                <div class="footer-nav-col">
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#domains">Domains</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-social">
+                <div class="footer-social-col">
                     <h4>Connect</h4>
-                    <div class="social-icons">
-                        <a href="mailto:mtanisshq7@gmail.com" class="social-icon">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/tanisshq-m-2ba090301" target="_blank" class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/tanisshq7" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://leetcode.com/u/9YyVpE65gs/" target="_blank" class="social-icon">
-                            <i class="fas fa-code"></i>
+                    <div class="footer-social-icons">
+                        <a href="mailto:mtanisshq7@gmail.com" class="footer-social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/tanisshq-m-2ba090301" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/tanisshq7" target="_blank" class="footer-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://leetcode.com/u/9YyVpE65gs" target="_blank" class="footer-social-btn" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    </div>
+                    <div class="footer-resume-cta">
+                        <a href="resume.pdf" target="_blank" class="btn btn-outline-glow btn-sm">
+                            <i class="fas fa-download"></i> Get Latest Resume
                         </a>
                     </div>
                 </div>
@@ -768,12 +1261,10 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Tanisshq M. All Rights Reserved.</p>
+                <p class="footer-subtext">Designed & Engineered with modern Web Standards</p>
             </div>
         </div>
     </footer>
-
-    <!-- ScrollReveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

@@ -1,327 +1,301 @@
-// Main JavaScript for Portfolio Website
+/**
+ * Tanisshq M - Portfolio Interactive JavaScript
+ * Data Analyst & AI Engineer
+ */
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Portfolio website loaded');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Animated Typewriter Effect
+    initTypewriter();
 
-    // Initialize all components
-    initMobileMenu();
-    initSmoothScrolling();
+    // 2. Sticky Navbar & Scrollspy
+    initNavigation();
+
+    // 3. Certificate Filter System
+    initCertFilters();
+
+    // 4. Contact Form Handler (Formspree AJAX)
     initContactForm();
-    initScrollEffects();
-    initCertificateCategories();
-    // initCertificateModal(); // Removed
-    init3DAnimations();
-    initScrollReveal();
+
+    // 5. Animated Counter Stats
+    initStatsCounter();
 });
 
-// Mobile Menu Toggle
-function initMobileMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+/* ==========================================================================
+   1. Typewriter Animation
+   ========================================================================== */
+function initTypewriter() {
+    const typewriterElement = document.getElementById('typewriter');
+    if (!typewriterElement) return;
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
+    const roles = [
+        'Data Analyst',
+        'AI Engineer',
+        'Python & GenAI Developer',
+        'SQL & Data Specialist'
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+            typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 110;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            // Pause before starting deletion
+            isDeleting = true;
+            typingSpeed = 2200;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typingSpeed = 450;
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    type();
+}
+
+/* ==========================================================================
+   2. Sticky Navbar, Scrollspy & Mobile Navigation
+   ========================================================================== */
+function initNavigation() {
+    const navbarWrapper = document.getElementById('navbarWrapper');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navLinkItems = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Navbar Scroll class
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbarWrapper?.classList.add('scrolled');
+        } else {
+            navbarWrapper?.classList.remove('scrolled');
+        }
+
+        // Active link scrollspy
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinkItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Mobile menu toggle
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('open');
         });
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // Close on link click
+        navLinkItems.forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('open');
             });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('open');
+            }
         });
     }
 }
 
-// Smooth Scrolling
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+/* ==========================================================================
+   3. Certificate Filter & Lightbox Modal
+   ========================================================================== */
+function initCertFilters() {
+    const filterButtons = document.querySelectorAll('.cert-filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
 
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+            const filterValue = btn.getAttribute('data-filter');
+
+            certCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         });
     });
 }
 
-// Contact Form
+// Global modal functions
+function openCertModal(imageSrc, title, issuer, date, certId, tagsString) {
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalCertImg');
+    const modalTitle = document.getElementById('modalCertTitle');
+    const modalOrg = document.getElementById('modalCertOrg');
+    const modalDate = document.getElementById('modalCertDate');
+    const modalId = document.getElementById('modalCertId');
+    const modalTags = document.getElementById('modalCertTags');
+    const modalLink = document.getElementById('modalCertFullLink');
+
+    if (!modal) return;
+
+    modalImg.src = imageSrc;
+    modalTitle.textContent = title;
+    modalOrg.textContent = issuer;
+    modalDate.innerHTML = `<i class="fas fa-calendar-alt"></i> ${date}`;
+    modalId.textContent = certId;
+    modalLink.href = imageSrc;
+
+    // Render tag chips
+    modalTags.innerHTML = '';
+    if (tagsString) {
+        tagsString.split(',').forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'pill-tag';
+            span.innerHTML = `<i class="fas fa-tag"></i> ${tag.trim()}`;
+            modalTags.appendChild(span);
+        });
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal(event) {
+    const modal = document.getElementById('certModal');
+    if (modal && event.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function closeCertModalDirect() {
+    const modal = document.getElementById('certModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCertModalDirect();
+    }
+});
+
+/* ==========================================================================
+   4. Contact Form Handler (Formspree AJAX)
+   ========================================================================== */
 function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
+    const form = document.getElementById('portfolioContactForm');
+    const statusMsg = document.getElementById('contactFormStatus');
 
-    if (contactForm && formMessage) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    if (!form || !statusMsg) return;
 
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-            // Show loading state
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnHtml = submitBtn.innerHTML;
 
-            formMessage.textContent = 'Sending your message...';
-            formMessage.style.display = 'block';
-            formMessage.style.backgroundColor = 'rgba(33, 150, 243, 0.1)';
-            formMessage.style.color = '#2196F3';
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+        statusMsg.className = 'form-status-msg';
+        statusMsg.textContent = '';
 
-            try {
-                const formData = new FormData(contactForm);
+        const formData = new FormData(form);
 
-                // Add hidden fields for better email formatting
-                formData.append('_subject', 'New message from portfolio website');
-                formData.append('_replyto', formData.get('email'));
-
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // Success message
-                    formMessage.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
-                    formMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-                    formMessage.style.color = '#4CAF50';
-
-                    // Reset form
-                    contactForm.reset();
-
-                    // Hide message after 5 seconds
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 5000);
-                } else {
-                    throw new Error('Form submission failed');
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            } catch (error) {
-                // Error message
-                formMessage.textContent = '❌ Oops! Something went wrong. Please try again or email me directly.';
-                formMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.1)';
-                formMessage.style.color = '#F44336';
+            });
 
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button state
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            }
-        });
-    }
-}
-
-// Scroll Effects
-function initScrollEffects() {
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 100) {
-                navbar.style.backgroundColor = 'rgba(18, 18, 31, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
+            if (response.ok) {
+                statusMsg.className = 'form-status-msg success';
+                statusMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
+                form.reset();
             } else {
-                navbar.style.backgroundColor = '';
-                navbar.style.backdropFilter = '';
+                const data = await response.json();
+                statusMsg.className = 'form-status-msg error';
+                statusMsg.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${data.errors?.map(err => err.message).join(', ') || 'Something went wrong. Please try emailing directly.'}`;
             }
+        } catch (error) {
+            statusMsg.className = 'form-status-msg error';
+            statusMsg.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Network error. Please email me directly at mtanisshq7@gmail.com';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
         }
     });
 }
 
-// Certificate Categories
-function initCertificateCategories() {
-    const categoryBtns = document.querySelectorAll('.category-btn');
-    const categorySections = document.querySelectorAll('.category-section');
+/* ==========================================================================
+   5. Animated Stats Counter
+   ========================================================================== */
+function initStatsCounter() {
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
 
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            // Remove active class from all buttons
-            categoryBtns.forEach(b => b.classList.remove('active'));
+    function animateCounters() {
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection) return;
 
-            // Add active class to clicked button
-            this.classList.add('active');
+        const rect = statsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0 && !hasAnimated) {
+            hasAnimated = true;
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 1600;
+                const increment = target / (duration / 25);
+                let current = 0;
 
-            // Get category
-            const category = this.getAttribute('data-category');
-
-            // Show/hide sections
-            categorySections.forEach(section => {
-                if (category === 'all' || section.id === `${category}-section`) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.ceil(current);
+                    }
+                }, 25);
             });
-
-            // Smooth scroll to certificates section
-            document.querySelector('#certificates').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-}
-
-// Certificate Modal Removed as per user request for direct links
-// function initCertificateModal() { ... }
-
-// 3D Animations
-function init3DAnimations() {
-    // Add floating animation to all floating cards
-    const floatingCards = document.querySelectorAll('.floating-card');
-
-    floatingCards.forEach((card, index) => {
-        // Add delay for staggered animation
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Add hover effect to skill tags
-    document.querySelectorAll('.skill-tag').forEach(tag => {
-        tag.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-5px) scale(1.05) rotateY(10deg)';
-        });
-
-        tag.addEventListener('mouseleave', function () {
-            this.style.transform = '';
-        });
-    });
-
-    // Add parallax effect to background elements on scroll
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
-
-        const bgCube = document.querySelector('.bg-cube');
-        const bgPyramid = document.querySelector('.bg-pyramid');
-        const bgSphere = document.querySelector('.bg-sphere');
-
-        if (bgCube) bgCube.style.transform = `translateY(${rate * 0.3}px) rotate(${rate * 0.1}deg)`;
-        if (bgPyramid) bgPyramid.style.transform = `translateY(${rate * 0.2}px) rotate(${rate * 0.05}deg)`;
-        if (bgSphere) bgSphere.style.transform = `translateY(${rate * 0.4}px)`;
-    });
-
-    // Initialize typing animation for hero subtitle
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) {
-        // Reset animation for repeat
-        heroSubtitle.style.animation = 'none';
-        setTimeout(() => {
-            heroSubtitle.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
-        }, 100);
-    }
-
-    // Add interactive 3D rotation to project cards on mouse move
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateY = ((x - centerX) / centerX) * 5;
-            const rotateX = ((centerY - y) / centerY) * 5;
-
-            this.querySelector('.card-3d').style.transform =
-                `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.02)`;
-        });
-
-        card.addEventListener('mouseleave', function () {
-            this.querySelector('.card-3d').style.transform = '';
-        });
-    });
-}
-
-// Handle image loading errors
-document.addEventListener('error', function (e) {
-    if (e.target.tagName === 'IMG' && e.target.classList.contains('certificate-preview')) {
-        console.error('Certificate image failed to load:', e.target.src);
-
-        // Create a placeholder with certificate info
-        const parent = e.target.parentElement;
-        const info = parent.nextElementSibling;
-
-        if (info) {
-            const title = info.querySelector('h4').textContent;
-            const org = info.querySelector('.certificate-org').textContent;
-
-            // Create SVG placeholder
-            const placeholderSVG = `
-                <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#1a1a2e"/>
-                    <text x="200" y="120" text-anchor="middle" fill="#00d4ff" font-family="Arial" font-size="18">${title}</text>
-                    <text x="200" y="150" text-anchor="middle" fill="#b0b0c0" font-family="Arial" font-size="14">${org}</text>
-                    <text x="200" y="180" text-anchor="middle" fill="#666" font-family="Arial" font-size="12">Certificate Preview</text>
-                    <rect x="50" y="200" width="300" height="2" fill="#00d4ff"/>
-                </svg>
-            `;
-
-            e.target.src = 'data:image/svg+xml;base64,' + btoa(placeholderSVG);
         }
-
-        e.target.src = 'data:image/svg+xml;base64,' + btoa(placeholderSVG);
     }
-}, true);
 
-// ScrollReveal Animations
-function initScrollReveal() {
-    // Check if ScrollReveal is loaded
-    if (typeof ScrollReveal === 'undefined') return;
-
-    const sr = ScrollReveal({
-        origin: 'bottom',
-        distance: '60px',
-        duration: 2500,
-        delay: 400,
-        reset: false // Animations run only once
-    });
-
-    // Hero Section
-    sr.reveal('.hero-title', { delay: 200, origin: 'left' });
-    sr.reveal('.hero-subtitle', { delay: 400, origin: 'left' });
-    sr.reveal('.hero-description', { delay: 600, origin: 'left' });
-    sr.reveal('.hero-buttons', { delay: 800, origin: 'left' });
-    sr.reveal('.hero-image', { delay: 600, origin: 'right' });
-
-    // Section Titles
-    sr.reveal('.section-title', { delay: 200, origin: 'top' });
-    sr.reveal('.section-subtitle', { delay: 400, origin: 'top' });
-
-    // About Section
-    sr.reveal('.about-card', { delay: 500, origin: 'bottom' });
-
-    // Certificates
-    sr.reveal('.category-nav', { delay: 300, origin: 'bottom' });
-    sr.reveal('.certificate-card', {
-        interval: 200, // Stagger animations
-        origin: 'bottom'
-    });
-
-    // Projects
-    sr.reveal('.project-card', {
-        interval: 200,
-        origin: 'bottom'
-    });
-
-    // Contact
-    sr.reveal('.contact-info', { delay: 300, origin: 'left' });
-    sr.reveal('.contact-form', { delay: 500, origin: 'right' });
+    window.addEventListener('scroll', animateCounters);
+    animateCounters(); // Initial check on load
 }
