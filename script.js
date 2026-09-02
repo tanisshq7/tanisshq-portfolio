@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Animated Counter Stats
     initStatsCounter();
+
+    // 6. Global Tech Trends Animated Carousel
+    initTrendsCarousel();
 });
 
 /* ==========================================================================
@@ -298,4 +301,156 @@ function initStatsCounter() {
 
     window.addEventListener('scroll', animateCounters);
     animateCounters(); // Initial check on load
+}
+
+/* ==========================================================================
+   6. Global Tech Trends Animated Carousel
+   ========================================================================== */
+let trendAutoPlayTimer = null;
+
+function initTrendsCarousel() {
+    const track = document.getElementById('trendCarouselTrack');
+    const container = document.getElementById('carouselContainer');
+    const prevBtn = document.getElementById('prevTrendBtn');
+    const nextBtn = document.getElementById('nextTrendBtn');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, idx) => {
+            if (idx === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    // Button controls
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
+        });
+    }
+
+    // Dot indicators
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index'));
+            goToSlide(idx);
+            resetAutoPlay();
+        });
+    });
+
+    // Auto Play
+    function startAutoPlay() {
+        stopAutoPlay();
+        trendAutoPlayTimer = setInterval(nextSlide, 4800);
+    }
+
+    function stopAutoPlay() {
+        if (trendAutoPlayTimer) {
+            clearInterval(trendAutoPlayTimer);
+            trendAutoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    if (container) {
+        container.addEventListener('mouseenter', stopAutoPlay);
+        container.addEventListener('mouseleave', startAutoPlay);
+
+        // Mobile touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeDistance = touchEndX - touchStartX;
+            if (Math.abs(swipeDistance) > 50) {
+                if (swipeDistance < 0) {
+                    nextSlide(); // Swiped left -> next
+                } else {
+                    prevSlide(); // Swiped right -> prev
+                }
+                resetAutoPlay();
+            }
+        }
+    }
+
+    startAutoPlay();
+}
+
+/* ==========================================================================
+   7. Newsletter Subscription Handler
+   ========================================================================== */
+function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById('newsletterEmail');
+    const msgBox = document.getElementById('newsletterMsg');
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+
+    if (!emailInput || !emailInput.value) return;
+
+    const email = emailInput.value.trim();
+
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+    }
+
+    setTimeout(() => {
+        if (msgBox) {
+            msgBox.className = 'subscribe-status-msg success';
+            msgBox.innerHTML = `<i class="fas fa-check-circle"></i> Awesome! <strong>${email}</strong> has been added to Tanisshq's Tech Digest.`;
+        }
+        emailInput.value = '';
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Subscribe</span>';
+        }
+    }, 600);
 }
