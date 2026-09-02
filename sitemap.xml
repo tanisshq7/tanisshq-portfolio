@@ -4,12 +4,18 @@
   <url>
     <loc>https://tanisshq7.github.io/tanisshq-portfolio/</loc>
     <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://tanisshq7.github.io/tanisshq-portfolio/profile.jpg</image:loc>
       <image:title>Tanisshq M - Data Analyst &amp; AI Engineer</image:title>
-      <image:caption>Tanisshq M official portrait and portfolio photo</image:caption>
+      <image:caption>Official portrait photo of Tanisshq M</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://tanisshq7.github.io/tanisshq-portfolio/resume.pdf</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
