@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Animated Counter Stats
     initStatsCounter();
 
-    // 6. Global Tech Trends Animated Carousel
+    // 6. Global Tech Trends Animated Carousel & Intelligence Hub
     initTrendsCarousel();
 });
 
@@ -56,7 +56,6 @@ function initTypewriter() {
         }
 
         if (!isDeleting && charIndex === currentRole.length) {
-            // Pause before starting deletion
             isDeleting = true;
             typingSpeed = 2200;
         } else if (isDeleting && charIndex === 0) {
@@ -158,7 +157,6 @@ function initCertFilters() {
     });
 }
 
-// Global modal functions
 function openCertModal(imageSrc, title, issuer, date, certId, tagsString) {
     const modal = document.getElementById('certModal');
     const modalImg = document.getElementById('modalCertImg');
@@ -178,7 +176,6 @@ function openCertModal(imageSrc, title, issuer, date, certId, tagsString) {
     modalId.textContent = certId;
     modalLink.href = imageSrc;
 
-    // Render tag chips
     modalTags.innerHTML = '';
     if (tagsString) {
         tagsString.split(',').forEach(tag => {
@@ -209,7 +206,6 @@ function closeCertModalDirect() {
     }
 }
 
-// Close modal with ESC key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeCertModalDirect();
@@ -300,14 +296,12 @@ function initStatsCounter() {
     }
 
     window.addEventListener('scroll', animateCounters);
-    animateCounters(); // Initial check on load
+    animateCounters();
 }
 
 /* ==========================================================================
-   6. Global Tech Trends Animated Carousel
+   6. Upgraded Global Tech Trends Animated Carousel & Hub
    ========================================================================== */
-let trendAutoPlayTimer = null;
-
 function initTrendsCarousel() {
     const track = document.getElementById('trendCarouselTrack');
     const container = document.getElementById('carouselContainer');
@@ -315,15 +309,24 @@ function initTrendsCarousel() {
     const nextBtn = document.getElementById('nextTrendBtn');
     const dots = document.querySelectorAll('.carousel-dot');
     const slides = document.querySelectorAll('.carousel-slide');
+    const tabButtons = document.querySelectorAll('.trend-tab-btn');
+    const counterDisplay = document.getElementById('carouselCounter');
+    const progressFill = document.getElementById('carouselProgressFill');
 
     if (!track || slides.length === 0) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
+    const slideDuration = 5200; // ms
+    let progressTimer = null;
+    let progressStartTime = null;
+    let isPaused = false;
+    let elapsedBeforePause = 0;
 
     function updateCarousel() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+        // Update Dots
         dots.forEach((dot, idx) => {
             if (idx === currentIndex) {
                 dot.classList.add('active');
@@ -331,6 +334,25 @@ function initTrendsCarousel() {
                 dot.classList.remove('active');
             }
         });
+
+        // Update Tabs Bar
+        tabButtons.forEach((tab, idx) => {
+            if (idx === currentIndex) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        // Update Counter
+        if (counterDisplay) {
+            const currNum = String(currentIndex + 1).padStart(2, '0');
+            const totalNum = String(totalSlides).padStart(2, '0');
+            counterDisplay.textContent = `${currNum} / ${totalNum}`;
+        }
+
+        // Reset and start progress
+        resetAndStartProgress();
     }
 
     function nextSlide() {
@@ -344,58 +366,82 @@ function initTrendsCarousel() {
     }
 
     function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
+        if (index >= 0 && index < totalSlides) {
+            currentIndex = index;
+            updateCarousel();
+        }
     }
 
-    // Button controls
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetAutoPlay();
+    // Tab buttons click
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const slideIdx = parseInt(btn.getAttribute('data-slide'));
+            goToSlide(slideIdx);
         });
-    }
+    });
 
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetAutoPlay();
-        });
-    }
+    // Arrow navigation
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
-    // Dot indicators
+    // Dots navigation
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
             const idx = parseInt(dot.getAttribute('data-index'));
             goToSlide(idx);
-            resetAutoPlay();
         });
     });
 
-    // Auto Play
-    function startAutoPlay() {
-        stopAutoPlay();
-        trendAutoPlayTimer = setInterval(nextSlide, 4800);
-    }
+    // Animated Progress Bar Engine
+    function startProgress(initialElapsed = 0) {
+        cancelAnimationFrame(progressTimer);
+        progressStartTime = performance.now() - initialElapsed;
 
-    function stopAutoPlay() {
-        if (trendAutoPlayTimer) {
-            clearInterval(trendAutoPlayTimer);
-            trendAutoPlayTimer = null;
+        function step(timestamp) {
+            if (isPaused) return;
+
+            const elapsed = timestamp - progressStartTime;
+            const progressRatio = Math.min(elapsed / slideDuration, 1);
+
+            if (progressFill) {
+                progressFill.style.width = `${progressRatio * 100}%`;
+            }
+
+            if (progressRatio < 1) {
+                progressTimer = requestAnimationFrame(step);
+            } else {
+                nextSlide();
+            }
         }
+
+        progressTimer = requestAnimationFrame(step);
     }
 
-    function resetAutoPlay() {
-        stopAutoPlay();
-        startAutoPlay();
+    function resetAndStartProgress() {
+        cancelAnimationFrame(progressTimer);
+        elapsedBeforePause = 0;
+        if (progressFill) progressFill.style.width = '0%';
+        if (!isPaused) {
+            startProgress(0);
+        }
     }
 
     // Pause on hover
     if (container) {
-        container.addEventListener('mouseenter', stopAutoPlay);
-        container.addEventListener('mouseleave', startAutoPlay);
+        container.addEventListener('mouseenter', () => {
+            isPaused = true;
+            if (progressStartTime) {
+                elapsedBeforePause = performance.now() - progressStartTime;
+            }
+            cancelAnimationFrame(progressTimer);
+        });
 
-        // Mobile touch swipe support
+        container.addEventListener('mouseleave', () => {
+            isPaused = false;
+            startProgress(elapsedBeforePause);
+        });
+
+        // Mobile touch swipe gestures
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -405,23 +451,19 @@ function initTrendsCarousel() {
 
         container.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-
-        function handleSwipe() {
             const swipeDistance = touchEndX - touchStartX;
-            if (Math.abs(swipeDistance) > 50) {
+            if (Math.abs(swipeDistance) > 45) {
                 if (swipeDistance < 0) {
-                    nextSlide(); // Swiped left -> next
+                    nextSlide();
                 } else {
-                    prevSlide(); // Swiped right -> prev
+                    prevSlide();
                 }
-                resetAutoPlay();
             }
-        }
+        }, { passive: true });
     }
 
-    startAutoPlay();
+    // Initialize initial state
+    updateCarousel();
 }
 
 /* ==========================================================================
@@ -439,18 +481,18 @@ function handleNewsletterSubmit(e) {
 
     if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Subscribing...</span>';
     }
 
     setTimeout(() => {
         if (msgBox) {
             msgBox.className = 'subscribe-status-msg success';
-            msgBox.innerHTML = `<i class="fas fa-check-circle"></i> Awesome! <strong>${email}</strong> has been added to Tanisshq's Tech Digest.`;
+            msgBox.innerHTML = `<i class="fas fa-check-circle"></i> Awesome! <strong>${email}</strong> has been added to Tanisshq's Tech Digest. Welcome aboard!`;
         }
         emailInput.value = '';
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Subscribe</span>';
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Subscribe Free</span>';
         }
-    }, 600);
+    }, 550);
 }

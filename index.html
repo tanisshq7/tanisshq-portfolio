@@ -170,6 +170,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- Section Scroll Indicator to About -->
+        <div class="section-scroll-indicator">
+            <a href="#about" class="scroll-pill-btn" aria-label="Scroll to About Section">
+                <span class="scroll-mouse-icon">
+                    <span class="scroll-wheel"></span>
+                </span>
+                <span class="scroll-pill-text">Scroll to About</span>
+                <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+            </a>
+        </div>
     </section>
 
     <!-- Quick Stats Bar -->
@@ -301,6 +312,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Section Scroll Indicator to Domains -->
+            <div class="section-scroll-indicator">
+                <a href="#domains" class="scroll-pill-btn" aria-label="Scroll to Domains Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Domains</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -414,6 +436,17 @@
                         <span class="skill-chip"><i class="fas fa-chart-simple"></i> Data Quality Scoring (0-100)</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Section Scroll Indicator to Projects -->
+            <div class="section-scroll-indicator">
+                <a href="#projects" class="scroll-pill-btn" aria-label="Scroll to Projects Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Projects</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -687,6 +720,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Section Scroll Indicator to Certificates -->
+            <div class="section-scroll-indicator">
+                <a href="#certificates" class="scroll-pill-btn" aria-label="Scroll to Certificates Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Certificates</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1103,6 +1147,17 @@
                 </div>
 
             </div>
+
+            <!-- Section Scroll Indicator to Newsletter / Trends -->
+            <div class="section-scroll-indicator">
+                <a href="#newsletter" class="scroll-pill-btn" aria-label="Scroll to World Trends Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Trends</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1110,12 +1165,36 @@
     <section id="newsletter" class="newsletter-section">
         <div class="container">
             <div class="section-header text-center">
-                <span class="section-tag"><i class="fas fa-newspaper"></i> Tech Pulse</span>
+                <span class="section-tag"><i class="fas fa-newspaper"></i> Intelligence Briefing</span>
                 <h2 class="section-title">Current World Trends & <span class="gradient-text">Tech Digest</span></h2>
                 <p class="section-subtitle">Curated briefings on breakthrough developments across Generative AI, Autonomous Agents, Data Lakehouses, and Enterprise Systems.</p>
             </div>
 
-            <!-- Animated Trend Carousel -->
+            <!-- Modern Interactive Trend Category Tabs -->
+            <div class="trend-tabs-bar" id="trendTabsBar">
+                <button class="trend-tab-btn active" data-slide="0">
+                    <i class="fas fa-robot"></i> <span>Agentic AI & MCP</span>
+                </button>
+                <button class="trend-tab-btn" data-slide="1">
+                    <i class="fas fa-brain"></i> <span>DeepSeek & Reasoning</span>
+                </button>
+                <button class="trend-tab-btn" data-slide="2">
+                    <i class="fas fa-database"></i> <span>Lakehouse & Data Stack</span>
+                </button>
+                <button class="trend-tab-btn" data-slide="3">
+                    <i class="fas fa-shield-halved"></i> <span>FinTech AI Auditing</span>
+                </button>
+                <button class="trend-tab-btn" data-slide="4">
+                    <i class="fas fa-microchip"></i> <span>Edge AI & SLMs</span>
+                </button>
+            </div>
+
+            <!-- Top Autoplay Progress Bar -->
+            <div class="carousel-progress-track">
+                <div class="carousel-progress-fill" id="carouselProgressFill"></div>
+            </div>
+
+            <!-- Animated Trend Carousel Hub -->
             <div class="carousel-container" id="carouselContainer">
                 <div class="carousel-track-wrapper">
                     <div class="carousel-track" id="trendCarouselTrack">
@@ -1123,29 +1202,45 @@
                         <!-- Slide 1: Agentic AI & Multi-Agent Workflows -->
                         <div class="carousel-slide">
                             <div class="trend-card glass-card">
-                                <div class="trend-card-top">
-                                    <div class="trend-badge badge-ai">
-                                        <i class="fas fa-robot"></i> Agentic AI Revolution
+                                <div class="trend-card-top-banner">
+                                    <div class="trend-icon-orb orb-ai">
+                                        <i class="fas fa-robot"></i>
                                     </div>
-                                    <span class="trend-date"><i class="fas fa-clock"></i> Sep 2026 &bull; 3 min read</span>
-                                </div>
-                                <h3 class="trend-title">The Rise of Autonomous Agentic Workflows: Beyond Chatbots to Action Execution</h3>
-                                <p class="trend-text">
-                                    The enterprise AI paradigm has rapidly shifted from static conversational chatbots to multi-agent architectures (powered by LangGraph, CrewAI, and Google Gemini). Autonomous agents can now decompose complex objectives, perform deterministic 4-way cross-reconciliations, call external APIs via Model Context Protocol (MCP), and self-correct on execution failures with verified guardrails.
-                                </p>
-                                <div class="trend-highlights">
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-emerald"></i> Multi-step agent decomposition replacing single prompt LLM calls</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-cyan"></i> Universal tool execution using Model Context Protocol (MCP)</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-purple"></i> Deterministic state machines ensuring zero hallucination in critical finance</div>
-                                </div>
-                                <div class="trend-footer">
-                                    <div class="trend-tags">
-                                        <span class="pill-tag">#LangGraph</span>
-                                        <span class="pill-tag">#Gemini2.0</span>
-                                        <span class="pill-tag">#AutonomousAgents</span>
-                                        <span class="pill-tag">#MCP</span>
+                                    <div class="trend-meta-header">
+                                        <div class="trend-category-chip badge-ai">Agentic AI Revolution</div>
+                                        <div class="trend-meta-sub">TREND 01 // 2026 HORIZON &bull; <i class="fas fa-clock"></i> 3 MIN READ</div>
                                     </div>
-                                    <span class="trend-impact-pill impact-high">Impact: Critical</span>
+                                    <div class="trend-impact-box impact-high">
+                                        <span class="impact-label">Industry Impact</span>
+                                        <span class="impact-val">98% &bull; Critical</span>
+                                    </div>
+                                </div>
+
+                                <div class="trend-card-content-grid">
+                                    <div class="trend-main-text">
+                                        <h3 class="trend-title">The Rise of Autonomous Agentic Workflows: Beyond Chatbots to Action Execution</h3>
+                                        <p class="trend-text">
+                                            The enterprise AI paradigm has rapidly transitioned from conversational question-and-answer chatbots to multi-agent architectures (orchestrated via LangGraph, CrewAI, and Google Gemini). Autonomous agents can now decompose complex corporate objectives, run deterministic 4-way cross-reconciliations, call external microservices through the Model Context Protocol (MCP), and recover gracefully from execution failures.
+                                        </p>
+                                        <div class="trend-tags">
+                                            <span class="pill-tag">#LangGraph</span>
+                                            <span class="pill-tag">#Gemini2.0</span>
+                                            <span class="pill-tag">#AutonomousAgents</span>
+                                            <span class="pill-tag">#MCP_Protocol</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-side-panel glass-card">
+                                        <h4 class="side-panel-title"><i class="fas fa-bolt text-amber"></i> Key Architectural Shifts</h4>
+                                        <ul class="trend-highlights-list">
+                                            <li><i class="fas fa-check-circle text-emerald"></i> <strong>Goal Decomposition:</strong> High-level instructions broken into multi-agent subtasks.</li>
+                                            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Universal Tool Use:</strong> Standardized MCP protocol connecting agents to databases & APIs.</li>
+                                            <li><i class="fas fa-check-circle text-purple"></i> <strong>State Sandboxing:</strong> Finite state machines that guarantee zero hallucination in critical finance.</li>
+                                        </ul>
+                                        <div class="trend-action-box">
+                                            <a href="#projects" class="trend-inline-link"><i class="fas fa-arrow-right"></i> See Implementation in Enterprise AI Copilot</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1153,29 +1248,45 @@
                         <!-- Slide 2: DeepSeek & Open Weights Intelligence -->
                         <div class="carousel-slide">
                             <div class="trend-card glass-card">
-                                <div class="trend-card-top">
-                                    <div class="trend-badge badge-cloud">
-                                        <i class="fas fa-brain"></i> Frontier Open AI
+                                <div class="trend-card-top-banner">
+                                    <div class="trend-icon-orb orb-cloud">
+                                        <i class="fas fa-brain"></i>
                                     </div>
-                                    <span class="trend-date"><i class="fas fa-clock"></i> Sep 2026 &bull; 4 min read</span>
-                                </div>
-                                <h3 class="trend-title">DeepSeek & Distilled Reasoning: The Global Democratization of High-Performance LLMs</h3>
-                                <p class="trend-text">
-                                    The global AI landscape was disrupted by breakthrough reasoning architectures like DeepSeek-R1 and reinforcement learning-driven reasoning tokens. Enterprises are drastically slashing inference costs by deploying distilled small-to-medium models on private hardware without compromising mathematical, coding, and analytical benchmarks.
-                                </p>
-                                <div class="trend-highlights">
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-emerald"></i> 90%+ inference cost reduction through pure reinforcement learning distillation</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-cyan"></i> On-premise private deployment ensuring zero corporate data exfiltration</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-purple"></i> Chain-of-thought verification for complex data science & SQL generation</div>
-                                </div>
-                                <div class="trend-footer">
-                                    <div class="trend-tags">
-                                        <span class="pill-tag">#DeepSeek</span>
-                                        <span class="pill-tag">#ReasoningModels</span>
-                                        <span class="pill-tag">#OpenWeights</span>
-                                        <span class="pill-tag">#CostOptimization</span>
+                                    <div class="trend-meta-header">
+                                        <div class="trend-category-chip badge-cloud">Frontier Open Weights</div>
+                                        <div class="trend-meta-sub">TREND 02 // 2026 HORIZON &bull; <i class="fas fa-clock"></i> 4 MIN READ</div>
                                     </div>
-                                    <span class="trend-impact-pill impact-high">Impact: Disruptive</span>
+                                    <div class="trend-impact-box impact-high">
+                                        <span class="impact-label">Industry Impact</span>
+                                        <span class="impact-val">95% &bull; Disruptive</span>
+                                    </div>
+                                </div>
+
+                                <div class="trend-card-content-grid">
+                                    <div class="trend-main-text">
+                                        <h3 class="trend-title">DeepSeek & Distilled Reasoning: The Global Democratization of High-Performance LLMs</h3>
+                                        <p class="trend-text">
+                                            The global technology sector was shaken by breakthrough reasoning architectures like DeepSeek-R1 and reinforcement learning-driven chain-of-thought tokens. Enterprises are drastically slashing inference compute costs by up to 90% by deploying distilled open-weight models on private on-premise infrastructure without sacrificing STEM, coding, and mathematical benchmark performance.
+                                        </p>
+                                        <div class="trend-tags">
+                                            <span class="pill-tag">#DeepSeek</span>
+                                            <span class="pill-tag">#ReasoningModels</span>
+                                            <span class="pill-tag">#OpenWeights</span>
+                                            <span class="pill-tag">#CostOptimization</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-side-panel glass-card">
+                                        <h4 class="side-panel-title"><i class="fas fa-shield-halved text-emerald"></i> Enterprise Value Drivers</h4>
+                                        <ul class="trend-highlights-list">
+                                            <li><i class="fas fa-check-circle text-emerald"></i> <strong>Pure RL Distillation:</strong> Top-tier reasoning capability packed into lightweight footprint models.</li>
+                                            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Data Sovereignty:</strong> Air-gapped deployment guaranteeing zero enterprise telemetry leaks.</li>
+                                            <li><i class="fas fa-check-circle text-purple"></i> <strong>SQL Synthesis:</strong> High-precision translation of complex analytics logic into dialect SQL.</li>
+                                        </ul>
+                                        <div class="trend-action-box">
+                                            <a href="#projects" class="trend-inline-link"><i class="fas fa-arrow-right"></i> See Implementation in AI SQL Generator</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1183,29 +1294,45 @@
                         <!-- Slide 3: Unified Lakehouse & AI-Native Data Engineering -->
                         <div class="carousel-slide">
                             <div class="trend-card glass-card">
-                                <div class="trend-card-top">
-                                    <div class="trend-badge badge-sql">
-                                        <i class="fas fa-database"></i> Modern Data Stack
+                                <div class="trend-card-top-banner">
+                                    <div class="trend-icon-orb orb-sql">
+                                        <i class="fas fa-database"></i>
                                     </div>
-                                    <span class="trend-date"><i class="fas fa-clock"></i> Aug 2026 &bull; 3 min read</span>
-                                </div>
-                                <h3 class="trend-title">Modern Lakehouses: Databricks Unity Catalog & Apache Iceberg Unification</h3>
-                                <p class="trend-text">
-                                    Siloed data lakes and warehouses have merged into open lakehouse formats like Apache Iceberg and Databricks Delta Lake. Governed under unified metadata catalogs, analytics engines now support real-time schema drift monitoring, automated Pydantic data validation pipelines, and natural language query generation directly over petabyte-scale tables.
-                                </p>
-                                <div class="trend-highlights">
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-emerald"></i> Universal metadata governance with Unity Catalog across multi-cloud</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-cyan"></i> Continuous streaming ETL with automated data quality scoring (0–100)</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-purple"></i> Native integration between vector embeddings and relational SQL tables</div>
-                                </div>
-                                <div class="trend-footer">
-                                    <div class="trend-tags">
-                                        <span class="pill-tag">#Databricks</span>
-                                        <span class="pill-tag">#ApacheIceberg</span>
-                                        <span class="pill-tag">#Lakehouse</span>
-                                        <span class="pill-tag">#DataGovernance</span>
+                                    <div class="trend-meta-header">
+                                        <div class="trend-category-chip badge-sql">Modern Data Architecture</div>
+                                        <div class="trend-meta-sub">TREND 03 // 2026 HORIZON &bull; <i class="fas fa-clock"></i> 3 MIN READ</div>
                                     </div>
-                                    <span class="trend-impact-pill impact-medium">Impact: High</span>
+                                    <div class="trend-impact-box impact-medium">
+                                        <span class="impact-label">Industry Impact</span>
+                                        <span class="impact-val">90% &bull; Transformational</span>
+                                    </div>
+                                </div>
+
+                                <div class="trend-card-content-grid">
+                                    <div class="trend-main-text">
+                                        <h3 class="trend-title">Modern Lakehouses: Databricks Unity Catalog & Apache Iceberg Unification</h3>
+                                        <p class="trend-text">
+                                            The historical dichotomy between unstructured data lakes and relational warehouses has officially dissolved into open table formats like Apache Iceberg and Databricks Delta Lake. Governed through centralized catalogs, analytics engines now support real-time schema drift alerting, automated Pydantic data validation pipelines, and direct vector embedding indexing.
+                                        </p>
+                                        <div class="trend-tags">
+                                            <span class="pill-tag">#Databricks</span>
+                                            <span class="pill-tag">#ApacheIceberg</span>
+                                            <span class="pill-tag">#UnityCatalog</span>
+                                            <span class="pill-tag">#DataGovernance</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-side-panel glass-card">
+                                        <h4 class="side-panel-title"><i class="fas fa-layer-group text-blue"></i> Data Stack Innovations</h4>
+                                        <ul class="trend-highlights-list">
+                                            <li><i class="fas fa-check-circle text-emerald"></i> <strong>Universal Catalog:</strong> Single pane of governance across AWS, GCP, and Azure lakehouses.</li>
+                                            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Quality Scoring:</strong> Continuous automated 0–100 pipeline validation ensuring pristine feeds.</li>
+                                            <li><i class="fas fa-check-circle text-purple"></i> <strong>Vector-Relational Hybrid:</strong> Semantic vectors queried side-by-side with SQL transactions.</li>
+                                        </ul>
+                                        <div class="trend-action-box">
+                                            <a href="#projects" class="trend-inline-link"><i class="fas fa-arrow-right"></i> See Implementation in WebHarvest-X Pipeline</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1213,29 +1340,45 @@
                         <!-- Slide 4: AI in Financial Auditing & Autonomous Compliance -->
                         <div class="carousel-slide">
                             <div class="trend-card glass-card">
-                                <div class="trend-card-top">
-                                    <div class="trend-badge badge-intern">
-                                        <i class="fas fa-shield-halved"></i> FinTech & Statutory AI
+                                <div class="trend-card-top-banner">
+                                    <div class="trend-icon-orb orb-intern">
+                                        <i class="fas fa-shield-halved"></i>
                                     </div>
-                                    <span class="trend-date"><i class="fas fa-clock"></i> Aug 2026 &bull; 3 min read</span>
-                                </div>
-                                <h3 class="trend-title">Autonomous Financial Compliance: Continuous Audits Over Periodic Sampling</h3>
-                                <p class="trend-text">
-                                    Traditional quarterly financial audits that rely on 2% sample sets are being superseded by continuous automated reconciliation. Leveraging unsupervised machine learning algorithms (Isolation Forest) alongside deterministic rule engines, systems can continuously cross-reconcile 100% of GST invoices, bank statements, and ERP journals in real-time.
-                                </p>
-                                <div class="trend-highlights">
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-emerald"></i> 100% transaction coverage replacing manual statistical sampling</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-cyan"></i> Automated GAAP / IFRS Adjusting Journal Entries (AJE) generation</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-purple"></i> Instant SOX 404 & tax authority regulatory sign-offs with evidence logs</div>
-                                </div>
-                                <div class="trend-footer">
-                                    <div class="trend-tags">
-                                        <span class="pill-tag">#FinAudit</span>
-                                        <span class="pill-tag">#FinancialAI</span>
-                                        <span class="pill-tag">#SOX404</span>
-                                        <span class="pill-tag">#FraudDetection</span>
+                                    <div class="trend-meta-header">
+                                        <div class="trend-category-chip badge-intern">FinTech & Regulatory AI</div>
+                                        <div class="trend-meta-sub">TREND 04 // 2026 HORIZON &bull; <i class="fas fa-clock"></i> 3 MIN READ</div>
                                     </div>
-                                    <span class="trend-impact-pill impact-high">Impact: Transformational</span>
+                                    <div class="trend-impact-box impact-high">
+                                        <span class="impact-label">Industry Impact</span>
+                                        <span class="impact-val">94% &bull; Statutory Standard</span>
+                                    </div>
+                                </div>
+
+                                <div class="trend-card-content-grid">
+                                    <div class="trend-main-text">
+                                        <h3 class="trend-title">Autonomous Financial Compliance: Continuous Audits Over Periodic Sampling</h3>
+                                        <p class="trend-text">
+                                            Traditional financial audits that rely on reviewing a mere 2% sample set of invoices are obsolete. Leveraging unsupervised machine learning (Isolation Forest) alongside deterministic state machines, modern audit systems continuously cross-reconcile 100% of GST invoices, bank settlement feeds, and ERP vouchers in real-time, surfacing subtle fraud patterns immediately.
+                                        </p>
+                                        <div class="trend-tags">
+                                            <span class="pill-tag">#FinAudit</span>
+                                            <span class="pill-tag">#4WayReconciliation</span>
+                                            <span class="pill-tag">#SOX404</span>
+                                            <span class="pill-tag">#IsolationForest</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-side-panel glass-card">
+                                        <h4 class="side-panel-title"><i class="fas fa-calculator text-cyan"></i> Audit Automation Milestones</h4>
+                                        <ul class="trend-highlights-list">
+                                            <li><i class="fas fa-check-circle text-emerald"></i> <strong>100% Coverage:</strong> Real-time deterministic matching across GST, Bank, and Ledger.</li>
+                                            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Auto-Journal Entries:</strong> Machine-generated Adjusting Journal Entries (AJE) for ledger gaps.</li>
+                                            <li><i class="fas fa-check-circle text-purple"></i> <strong>Auditor Sign-off:</strong> Evidence-bound Google Gemini summaries with strict citation logs.</li>
+                                        </ul>
+                                        <div class="trend-action-box">
+                                            <a href="#projects" class="trend-inline-link"><i class="fas fa-arrow-right"></i> Explore FinAudit-AI Architecture</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1243,29 +1386,45 @@
                         <!-- Slide 5: Small Language Models & Edge AI -->
                         <div class="carousel-slide">
                             <div class="trend-card glass-card">
-                                <div class="trend-card-top">
-                                    <div class="trend-badge badge-workshop">
-                                        <i class="fas fa-microchip"></i> Edge AI & SLMs
+                                <div class="trend-card-top-banner">
+                                    <div class="trend-icon-orb orb-edge">
+                                        <i class="fas fa-microchip"></i>
                                     </div>
-                                    <span class="trend-date"><i class="fas fa-clock"></i> Aug 2026 &bull; 2 min read</span>
-                                </div>
-                                <h3 class="trend-title">The Era of Small Language Models: High Accuracy on Edge Devices</h3>
-                                <p class="trend-text">
-                                    Massive 70B+ parameter models are giving way to compact 1B–7B parameter models (Gemma, Phi, Qwen) that run locally on consumer laptops and IoT devices with sub-10ms latency. This unlocks privacy-first enterprise search, on-device smart diagnostics, and offline intelligent controllers without sending sensitive data to external servers.
-                                </p>
-                                <div class="trend-highlights">
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-emerald"></i> Zero latency and offline execution on consumer hardware</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-cyan"></i> Complete data sovereignty with zero external API calls</div>
-                                    <div class="trend-highlight-item"><i class="fas fa-check-circle text-purple"></i> Specialized domain fine-tuning outperforming general purpose giants</div>
-                                </div>
-                                <div class="trend-footer">
-                                    <div class="trend-tags">
-                                        <span class="pill-tag">#SLM</span>
-                                        <span class="pill-tag">#EdgeAI</span>
-                                        <span class="pill-tag">#Gemma</span>
-                                        <span class="pill-tag">#PrivacyFirst</span>
+                                    <div class="trend-meta-header">
+                                        <div class="trend-category-chip badge-workshop">Edge Computing & SLMs</div>
+                                        <div class="trend-meta-sub">TREND 05 // 2026 HORIZON &bull; <i class="fas fa-clock"></i> 2 MIN READ</div>
                                     </div>
-                                    <span class="trend-impact-pill impact-medium">Impact: Expanding</span>
+                                    <div class="trend-impact-box impact-medium">
+                                        <span class="impact-label">Industry Impact</span>
+                                        <span class="impact-val">88% &bull; High Velocity</span>
+                                    </div>
+                                </div>
+
+                                <div class="trend-card-content-grid">
+                                    <div class="trend-main-text">
+                                        <h3 class="trend-title">The Era of Small Language Models: High Accuracy On-Device</h3>
+                                        <p class="trend-text">
+                                            Gigantic 70B+ cloud models are making room for compact 1B–7B parameter models (Gemma, Phi, Qwen) running locally on consumer workstations and IoT endpoints with sub-10ms response times. This unlocks zero-latency enterprise semantic search, edge hardware diagnostics, and offline intelligent controllers with absolute privacy.
+                                        </p>
+                                        <div class="trend-tags">
+                                            <span class="pill-tag">#SLM</span>
+                                            <span class="pill-tag">#EdgeAI</span>
+                                            <span class="pill-tag">#Gemma2</span>
+                                            <span class="pill-tag">#PrivacyFirst</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-side-panel glass-card">
+                                        <h4 class="side-panel-title"><i class="fas fa-shield text-purple"></i> On-Device Advantages</h4>
+                                        <ul class="trend-highlights-list">
+                                            <li><i class="fas fa-check-circle text-emerald"></i> <strong>Sub-10ms Latency:</strong> Immediate real-time inference without network roundtrips.</li>
+                                            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Zero Cloud Overhead:</strong> Free local compute running directly on NPU/GPU chips.</li>
+                                            <li><i class="fas fa-check-circle text-purple"></i> <strong>Offline Resilience:</strong> Systems remain fully functional even in severed network zones.</li>
+                                        </ul>
+                                        <div class="trend-action-box">
+                                            <a href="#about" class="trend-inline-link"><i class="fas fa-arrow-right"></i> View Hardware & IoT Patent Background</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1273,49 +1432,63 @@
                     </div>
                 </div>
 
-                <!-- Carousel Controls -->
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn" id="prevTrendBtn" aria-label="Previous Trend">
-                        <i class="fas fa-chevron-left"></i>
+                <!-- Upgraded Carousel Navigation Toolbar -->
+                <div class="carousel-toolbar glass-card">
+                    <button class="carousel-nav-btn prev-btn" id="prevTrendBtn" aria-label="Previous Trend">
+                        <i class="fas fa-arrow-left"></i> <span>Previous</span>
                     </button>
                     
-                    <div class="carousel-dots" id="carouselDots">
-                        <span class="carousel-dot active" data-index="0"></span>
-                        <span class="carousel-dot" data-index="1"></span>
-                        <span class="carousel-dot" data-index="2"></span>
-                        <span class="carousel-dot" data-index="3"></span>
-                        <span class="carousel-dot" data-index="4"></span>
+                    <div class="carousel-pagination-center">
+                        <span class="carousel-counter" id="carouselCounter">01 / 05</span>
+                        <div class="carousel-dots" id="carouselDots">
+                            <span class="carousel-dot active" data-index="0"></span>
+                            <span class="carousel-dot" data-index="1"></span>
+                            <span class="carousel-dot" data-index="2"></span>
+                            <span class="carousel-dot" data-index="3"></span>
+                            <span class="carousel-dot" data-index="4"></span>
+                        </div>
                     </div>
 
-                    <button class="carousel-btn next-btn" id="nextTrendBtn" aria-label="Next Trend">
-                        <i class="fas fa-chevron-right"></i>
+                    <button class="carousel-nav-btn next-btn" id="nextTrendBtn" aria-label="Next Trend">
+                        <span>Next</span> <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Interactive Newsletter Subscription Box -->
+            <!-- Premium Newsletter Subscription Portal -->
             <div class="newsletter-subscribe-wrapper">
                 <div class="newsletter-subscribe-card glass-card">
                     <div class="subscribe-content">
                         <div class="subscribe-badge">
                             <span class="pulse-dot"></span>
-                            <span>Tanisshq's Tech Digest &bull; Monthly Edition</span>
+                            <span>Tanisshq's Tech Digest &bull; Monthly Curated Briefing</span>
                         </div>
-                        <h3 class="subscribe-title">Subscribe to the <span class="gradient-text">World Trends Digest</span></h3>
-                        <p class="subscribe-desc">Get curated breakdowns of breakthrough AI architectures, data engineering frameworks, and technical case studies straight to your inbox.</p>
+                        <h3 class="subscribe-title">Stay Ahead of the <span class="gradient-text">World Tech Curve</span></h3>
+                        <p class="subscribe-desc">Join 500+ developers, data professionals, and founders receiving concise, zero-fluff breakdowns of breakthrough AI architectures, data engineering frameworks, and real-world case studies.</p>
                         
                         <form class="subscribe-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
                             <div class="subscribe-input-group">
                                 <i class="fas fa-envelope"></i>
                                 <input type="email" id="newsletterEmail" placeholder="Enter your email address (e.g. name@company.com)" required>
                                 <button type="submit" class="btn btn-gradient btn-subscribe">
-                                    <i class="fas fa-paper-plane"></i> <span>Subscribe</span>
+                                    <i class="fas fa-paper-plane"></i> <span>Subscribe Free</span>
                                 </button>
                             </div>
                             <div id="newsletterMsg" class="subscribe-status-msg"></div>
                         </form>
                     </div>
                 </div>
+            </div>
+
+            <!-- Section Scroll Indicator to Experience -->
+            <div class="section-scroll-indicator">
+                <a href="#experience" class="scroll-pill-btn" aria-label="Scroll to Experience Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Experience</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1412,6 +1585,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Section Scroll Indicator to Contact -->
+            <div class="section-scroll-indicator">
+                <a href="#contact" class="scroll-pill-btn" aria-label="Scroll to Contact Section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel"></span>
+                    </span>
+                    <span class="scroll-pill-text">Scroll to Contact</span>
+                    <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1495,6 +1679,17 @@
                     </form>
                     <div id="contactFormStatus" class="form-status-msg"></div>
                 </div>
+            </div>
+
+            <!-- Bottom Indicator back to top -->
+            <div class="section-scroll-indicator">
+                <a href="#home" class="scroll-pill-btn" aria-label="Back to Top">
+                    <i class="fas fa-arrow-up scroll-arrow-icon" style="transform: none; animation: floatBounce 2s infinite;"></i>
+                    <span class="scroll-pill-text">Back to Top</span>
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel" style="animation-direction: reverse;"></span>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
