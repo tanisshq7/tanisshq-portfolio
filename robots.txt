@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanisshq7.github.io/tanisshq-portfolio/sitemap.xml
