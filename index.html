@@ -186,7 +186,7 @@
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fas fa-code-fork"></i></div>
                     <div class="stat-info">
-                        <h3 class="stat-number">3+</h3>
+                        <h3 class="stat-number">4+</h3>
                         <p class="stat-label">Core Enterprise AI Projects</p>
                     </div>
                 </div>
@@ -423,11 +423,77 @@
             <div class="section-header text-center">
                 <span class="section-tag"><i class="fas fa-laptop-code"></i> Portfolio Work</span>
                 <h2 class="section-title">Featured <span class="gradient-text">Enterprise Projects</span></h2>
-                <p class="section-subtitle">Real-world full-stack AI, data analytics, and data engineering systems</p>
+                <p class="section-subtitle">Real-world autonomous AI, financial reconciliation, data analytics, and data engineering systems</p>
             </div>
 
             <div class="projects-list">
-                <!-- Project 1: Enterprise AI Copilot -->
+                <!-- Project 1: FinAudit-AI -->
+                <div class="project-featured-card glass-card">
+                    <div class="project-content-side">
+                        <div class="project-meta-pill">
+                            <span class="pill-dot"></span>
+                            <span>Autonomous Agentic AI &bull; 4-Way Reconciliation</span>
+                        </div>
+                        <h3 class="project-title">FinAudit-AI</h3>
+                        <p class="project-tagline">Autonomous Financial Audit, 4-Way Reconciliation & Risk Intelligence Engine</p>
+                        
+                        <p class="project-description">
+                            A production-grade financial audit intelligence platform that automates high-volume <strong>4-way cross-reconciliation</strong> across GST Tax Invoices, UPI / NEFT / RTGS settlements, Bank Statements, and General Ledger vouchers (₹ INR). Features <strong>IsolationForest machine learning</strong> anomaly detection, composite 0–100 risk scoring, and evidence-bound <strong>Google Gemini reasoning</strong> for GAAP/SOX-compliant audit findings.
+                        </p>
+
+                        <div class="project-features-list">
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Autonomous 4-way cross-matching across GST invoices, payment gateways, and ledger</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Unsupervised ML anomaly detection using Isolation Forest and statistical Z-scores</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> LangGraph multi-agent state machine orchestrating audit ingestion to remediation</div>
+                            <div class="feat-item"><i class="fas fa-check-circle"></i> Automated GAAP/IFRS Adjusting Journal Entries (AJE) & SOX 404 sign-off generation</div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-badge"><i class="fas fa-diagram-project"></i> LangGraph</span>
+                            <span class="tech-badge"><i class="fas fa-sparkles"></i> Google Gemini</span>
+                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-badge"><i class="fas fa-calculator"></i> IsolationForest ML</span>
+                            <span class="tech-badge"><i class="fas fa-receipt"></i> 4-Way Reconciliation</span>
+                            <span class="tech-badge"><i class="fab fa-docker"></i> Docker & Cloud</span>
+                        </div>
+
+                        <div class="project-links-row">
+                            <a href="https://github.com/tanisshq7/FinAudit-AI" target="_blank" class="btn btn-gradient btn-sm">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-visual-side">
+                        <div class="project-mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="mockup-title">finaudit-engine // v1.0.0</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="code-preview">
+                                    <span class="code-comment"># FinAudit Autonomous 4-Way Reconciliation Engine</span>
+                                    <span class="code-line"><span class="code-kw">from</span> agents.reconciler <span class="code-kw">import</span> FourWayReconciler</span>
+                                    <span class="code-line"><span class="code-kw">from</span> models.anomaly <span class="code-kw">import</span> IsolationForestDetector</span>
+                                    <span class="code-line"><span class="code-kw">from</span> core.gemini <span class="code-kw">import</span> AuditEvidenceReasoner</span>
+                                    <br>
+                                    <span class="code-line"><span class="code-kw">async def</span> <span class="code-fn">audit_financial_batch</span>(gst_feed, bank_stmt, gl_voucher):</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;matches = reconciler.cross_match(gst_feed, bank_stmt, gl_voucher)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;anomalies = detector.detect(matches.unmatched_items)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;sox_report = reasoner.generate_sox_aje(anomalies)</span>
+                                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> AuditSummary(risk_score=anomalies.composite_score)</span>
+                                </div>
+                                <div class="project-card-stat-pill">
+                                    <i class="fas fa-shield-check text-emerald"></i> 4-Way Reconciled &bull; GAAP & SOX 404 Compliant
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Enterprise AI Copilot -->
                 <div class="project-featured-card glass-card">
                     <div class="project-content-side">
                         <div class="project-meta-pill">
@@ -493,7 +559,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: AI-Powered SQL Query Generator -->
+                <!-- Project 3: AI-Powered SQL Query Generator -->
                 <div class="project-featured-card glass-card">
                     <div class="project-content-side">
                         <div class="project-meta-pill">
@@ -556,7 +622,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: WebHarvest-X -->
+                <!-- Project 4: WebHarvest-X -->
                 <div class="project-featured-card glass-card">
                     <div class="project-content-side">
                         <div class="project-meta-pill">
